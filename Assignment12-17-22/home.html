@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Patient</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <!-- Top navbar -->
+        <nav class="topnav">
+            <!-- Left Side Portion -->
+            <a class="active" href="#home"><i class="fa-solid fa-gear"></i></a>
+            <a href="#news"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#contact"><i class="fa-solid fa-user"></i></a>
+            <a href="#about"><i class="fa-solid fa-calendar-days"></i></a>
+            <a href="#about"><i class="fa-solid fa-user-shield"></i></a>
+            <a href="#about"><i class="fa-solid fa-shield-heart"></i></a>
+            <a href="#about"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+            <a href="#about"><i class="fa-solid fa-notes-medical"></i></a>
+            <a href="#about"><i class="fa-solid fa-flask"></i></a>
+            <a href="#about"><i class="fa-solid fa-arrow-down"></i></a>
+            <a href="#about"><i class="fa-solid fa-arrow-up"></i></a>
+            <a href="#about"><i class="fa-solid fa-file-invoice"></i></a>
+            <a href="#about"><i class="fa-solid fa-dollar-sign"></i></a>
+            <a href="#about"><i class="fa-solid fa-file-invoice-dollar"></i></a>
+            <a href="#about"><i class="fa-solid fa-magnifying-glass-dollar"></i></a>
+            <a href="#about"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+            <a href="#about"><i class="fa-solid fa-envelope-circle-check"></i></a>
+            <a href="#about"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
+            <a href="#about"><i class="fa-solid fa-sack-dollar"></i></a>
+            <a href="#about"><i class="fa-solid fa-receipt"></i></a>
+            <a href="#about"><i class="fa-solid fa-book"></i></a>
+            <a href="#about"><i class="fa-solid fa-envelope-open-text"></i></a>
+            <a href="#about"><i class="fa-solid fa-chart-line"></i></a>
+            
+            <!-- Right Side Portion -->
+            <div class="topnav-right">
+                <form action="#">
+                    <input type="text" class="searchpatientbox" name="searchbox" id="searchpatient"
+                    placeholder="Search Patient">
+                </form>
+                <a href="#about"><i class="fa-solid fa-calendar-week"></i></a>
+                <a href="#about"><i class="fa-solid fa-circle-question"></i></a>
+                <a href="#about"><i class="fa-solid fa-lock"></i></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main">
+            <div class="rightnav">
+                <!-- Right Side Navbar -->
+                <aside class="rightnav">
+                    <a href="#home"><i class="fa-solid fa-fax"></i><span>0</span></a>
+                    
+                    <a href="#home"><i class="fa-solid fa-comment-dots"></i><span>0</span></a>
+                    <a href="#home"><i class="fa-solid fa-envelope"></i><span>0</span></a>
+                    <a href="#home"><i class="fa-solid fa-bell"></i></i><span>0</span></a>
+                    <a href="#home"><i class="fa-solid fa-list-check"></i><span>0</span></a>
+                    <a href="#home"><i class="fa-solid fa-calendar-plus"></i></a>
+                    <a href="#home"><i class="fa-solid fa-note-sticky"></i></a>
+                </aside>
+            </div>
+            <div class="leftside-main">
+                <section class="header-section">
+                    <div class="tabview-main">
+                        <div class="tabview">
+                            <a href="#home">Patient Name</a>
+                            <div style="float: right; padding: 0.5rem; font-size: 1.2rem;">
+                                <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="patient-info-section">
+                        <div class="patient-detail">
+                            <a href="#home">Patient Bar</a>
+                            <div style="float: right; padding: 0.5rem; font-size: 1.2rem;">
+                                <i class="fa-solid fa-circle-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="main-section">
+                    <div class="leftsidenav">
+                        <a href="#about">Dashboard</a>
+                        <a href="#services" class="active">Demographics</a>
+                        <a href="#clients">Insurance</a>
+                        <a href="#contact">Case</a>
+                        <a href="#about">Contacts</a>
+                        <a href="#services">Employer</a>
+                        <a href="#clients">Appointments</a>
+                        <a href="#contact">Encounters</a>
+                        <a href="#about">Documents</a>
+                        <a href="#services">Notes & Alerts</a>
+                        <a href="#clients">Forms</a>
+                        <a href="#contact">Consents</a>
+                        <a href="#about">Reminder Preference</a>
+                        <hr class="separator">
+                        <a href="#services">Allergy</a>
+                        <a href="#clients">Diagnosis</a>
+                        <a href="#contact">Family History</a>
+                        <a href="#about">Prescription</a>
+                        <a href="#services">Lab</a>
+                        <a href="#clients">Immunization</a>
+                        <a href="#contact">Vitals</a>
+                        <hr class="separator">
+                        <a href="#about">Authorization</a>
+                        <a href="#contact">Claims</a>
+                        <a href="#services">Receipt</a>
+                        <a href="#clients">Open Credit</a>
+                        <a href="#contact">Statements</a>
+                        <a href="#contact">Ledger</a>
+                    </div>
+                    
+                    <div class="patient-main-container">
+                        <div class="form-buttons-section">
+                            <div class="form-buttons">
+                                <div style="float: right; padding: 0.5rem; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-square-check" style="color: #20b2aa; padding: 0 0.3rem 0 0;"></i><span style="font-size: 1rem;">Active</span>
+                                    <i class="fa-solid fa-ellipsis-vertical" style="padding: 0 1rem 0 1rem;"></i>
+                                    <button type="button" class="btn btn-secondary">Re-Verify</button>
+                                    <button type="button" id="resetbtn" class="btn btn-secondary">Cancel Changes</button>
+                                    <button type="submit" class="btn btn-primary" form="patient-info-form">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="patient-form-container">
+                            <div class="form-section">
+                                <form action="#" id="patient-info-form">
+                                    <div class="patient-general-info mb-bottom-2">
+                                        <div class="xl-side-33">
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="left-align-item w-50">
+                                                        
+                                                    </div>
+                                                    <div class="d-flex d-flex-col left-align-item w-50">
+                                                        <img src="./assets/image/avatar.jpg" alt="Patient Image" class="patient-image">
+                                                        <label for="" style="font-size: 1.5rem; width: 100%;">PT000000001</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="prefix">Prefix:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="prefix" name="prefix" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="fname">First Name:<span class="require-field">*</span></label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="fname" name="firstname" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="mname">Middle Name:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="mname" name="middlename" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="lname">Last Name:<span class="require-field">*</span></label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="lname" name="lastname" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="lname">Last Name2:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="lname2" name="lastname2" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="d-flex d-center w-100">
+                                                <div class="right-align-item w-50">
+                                                    <label for="suffix">Suffix:</label>
+                                                </div>
+                                                <div class="left-align-item w-50">
+                                                    <input type="text" class="input-tag" id="Suffix" name="Suffix" placeholder="">
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="aka">AKA:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="aka" name="aka" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="xl-side-33">
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="sex">Sex:<span class="require-field">*</span></label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="sex" id="sex" class="select-option">
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Unknown">Unknown</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="dob">DOB:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="date" class="input-tag" id="dob" name="dob" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="language">Pref Language:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="language" id="language" class="select-option">
+                                                            <option value="">English</option>
+                                                            <option value="">Hindi</option>
+                                                            <option value="">Gujarati</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="interpreter">Interpreter:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="checkbox" class="checkbox-tag" id="interpreter" name="interpreter" checked>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="status">Status:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="status" id="status" class="select-option">
+                                                            <option value="">First Appointment Pending</option>
+                                                            <option value="">Registration Entry Pending</option>
+                                                            <option value="">Immunizations Pending</option>
+                                                            <option value="">Insurance inclusion Pending</option>
+                                                            <option value="">Insurace12</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="risk">Risk:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <a href="#" style="text-decoration: none; color: #243b53; margin-left: 0.5rem;"><i
+                                                            class="fa-solid fa-circle-plus"></i>Add Risk</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="marital-status">Marital Status:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="marital-status" id="marital-status" class="select-option">
+                                                                <option value="">Married</option>
+                                                                <option value="">Never Married</option>
+                                                                <option value="">Divorced</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="ssn">SSN:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="ssn" name="ssn" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="race">Race:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="race" id="race" class="select-option">
+                                                                <option value="">White</option>
+                                                                <option value="">American Indian or Alaskan Native</option>
+                                                                <option value="">Asian</option>
+                                                                <option value="">Black or African American</option>
+                                                                <option value="">Black or African American</option>
+                                                                <option value="">Black or African American</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="ethnicity">Ethnicity:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="ethnicity" id="ethnicity" class="select-option">
+                                                                <option value="">Other Ethnicity</option>
+                                                                <option value="">Unreported/Refuced to report</option>
+                                                                <option value="">Hispanic/Latino</option>
+                                                                <option value="">Non-Hispanic/Latino</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="xl-side-33">
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="self-pay">Self Pay:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="checkbox"  id="self-pay" name="self-pay">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="default-facility">Default Facility:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="default-facility" id="default-facility" class="select-option">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="default-provider">Default Provider:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="default-provider" id="default-provider" class="select-option">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="timezone">Timezone:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="timezone" id="timezone" class="select-option">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="default-pharmacy">Default Pharmacy:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="default-pharmacy" id="default-pharmacy" class="select-option">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="current-rx-pharma">Use current pharmacy for all Rx:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="checkbox" class="" id="current-rx-pharma" name="current-rx-pharma" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="pcp-provider">PCP same as Provider:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="checkbox" class="" id="pcp-provider" name="pcp-provider" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="pcp">PCP:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="pcp" id="pcp" class="select-option">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="fee-schedule">Fee Schedule:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="fee-schedule" id="fee-schedule" class="select-option" disabled>
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="patient-contact-info">
+                                            <div class="contact-header">
+                                                <h2>Contact Details <i class="fa-solid fa-circle-plus" onclick="addContactDetailFrom()"></i></h2>
+                                                <span>Please set the preferences after adding the contact information, the section to set preference
+                                                    can
+                                                    be found below the
+                                                    contact section of the page.</span>
+                                                </div>
+                                                <div class="contact-detail-form-container w-100" id="contact-detail-form">
+                                                    <div class="contact-detail-form">
+                                                        <fieldset>
+                                                            <legend><select name="" id="" class="select-option" style="width: 10rem;">
+                                                                <option value="">Home</option>
+                                                                <option value="">Work</option>
+                                                                <option value="">Other</option>
+                                                            </select></legend>
+                                                            <div class="contact-container">
+                                                                <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                                                    <div>
+                                                                        <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address</span>
+                                                                    </div>
+                                                                    <div class="right-align-item">
+                                                                        <i class="fa-solid fa-trash-can" onclick="removeContactForm(this)"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;">
+                                                                    <div>
+                                                                        <label for="">Street</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="w-100 margin-tbr">
+                                                                        <div>
+                                                                            <label for="">Zip</label>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-100 margin-tbr">
+                                                                        <div>
+                                                                            <label for="">City</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <div>
+                                                                            <label for="">State</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option" style="width: 5rem;">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <div>
+                                                                            <label for="">Country</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option" style="width: 5rem;">
+                                                                                <option value="">US</option>
+                                                                                <option value="">India</option>
+                                                                                <option value="">Australia</option>
+                                                                                <option value="">US</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <i class="fa-solid fa-trash-can"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="font-dark" style="font-weight: 700;">Phone <i class="fa-solid fa-circle-plus"></i></span>
+                                                                </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="w-100 margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Type</label>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-100 margin-tbr" style="width: 15%;">
+                                                                        <div>
+                                                                            <label for="">Code</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Number</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Ext.</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" >
+                                                                        <div style="height: 1.5rem;">
+                                                                            
+                                                                        </div>
+                                                                        <div>
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;">
+                                                                    <div>
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Fax <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="" hidden>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;" class="margin-tbr">
+                                                                    <div style="margin-top: 0.5rem;">
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Email <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div class="d-flex d-center">
+                                                                        <div class="w-100">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                        <div style="margin-left: 0.5rem;">
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;" class="margin-tbr">
+                                                                    <div style="margin-top: 0.5rem;">
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Website <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div class="d-flex d-center d-none">
+                                                                        <div class="w-100">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="" >
+                                                                        </div>
+                                                                        <div style="margin-left: 0.5rem;">
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="contact-detail-form">
+                                                        <fieldset>
+                                                            <legend><select name="" id="" class="select-option" style="width: 10rem;">
+                                                                <option value="">Home</option>
+                                                                <option value="" selected>Work</option>
+                                                                <option value="">Other</option>
+                                                            </select></legend>
+                                                            <div class="contact-container">
+                                                                <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                                                    <div>
+                                                                        <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address</span>
+                                                                    </div>
+                                                                    <div class="right-align-item">
+                                                                        <i class="fa-solid fa-trash-can" onclick="removeContactForm(this)"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;">
+                                                                    <div>
+                                                                        <label for="">Street</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="w-100 margin-tbr">
+                                                                        <div>
+                                                                            <label for="">Zip</label>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-100 margin-tbr">
+                                                                        <div>
+                                                                            <label for="">City</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <div>
+                                                                            <label for="">State</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option" style="width: 5rem;">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <div>
+                                                                            <label for="">Country</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option" style="width: 5rem;">
+                                                                                <option value="">US</option>
+                                                                                <option value="">India</option>
+                                                                                <option value="">Australia</option>
+                                                                                <option value="">US</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <i class="fa-solid fa-trash-can"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="font-dark" style="font-weight: 700;">Phone <i class="fa-solid fa-circle-plus"></i></span>
+                                                                </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="w-100 margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Type</label>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="w-100 margin-tbr" style="width: 15%;">
+                                                                        <div>
+                                                                            <label for="">Code</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Number</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <div>
+                                                                            <label for="">Ext.</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr">
+                                                                        <div style="height: 1.5rem;">
+                                                                            
+                                                                        </div>
+                                                                        <div>
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;">
+                                                                    <div>
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Fax <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="" hidden>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;" class="margin-tbr">
+                                                                    <div style="margin-top: 0.5rem;">
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Email <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div class="d-flex d-center">
+                                                                        <div class="w-100">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                        <div style="margin-left: 0.5rem;">
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="street-field" style="width: 66%;" class="margin-tbr">
+                                                                    <div style="margin-top: 0.5rem;">
+                                                                        <label class="font-dark" for="" style="font-weight: 700;">Website <i class="fa-solid fa-circle-plus"></i></label>
+                                                                    </div>
+                                                                    <div class="d-flex d-center">
+                                                                        <div class="w-100">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                        <div style="margin-left: 0.5rem;">
+                                                                            <i class="fa-solid fa-trash-can"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="patient-other-info-main mb-bottom-2">
+                                                <div class="other-info-header" style="justify-content: space-between;">
+                                                    <h2><i class="fa-solid fa-circle-chevron-down"></i> Other Details</h2>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="xl-side-33">
+                                                        
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="prefix">Prefix:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="prefix" name="prefix" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="fname">First Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="fname" name="firstname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="mname">Middle Name:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="mname" name="middlename" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname" name="lastname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name2:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname2" name="lastname2" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="d-flex d-center w-100">
+                                                            <div class="right-align-item w-50">
+                                                                <label for="suffix">Suffix:</label>
+                                                            </div>
+                                                            <div class="left-align-item w-50">
+                                                                <input type="text" class="input-tag" id="Suffix" name="Suffix" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="aka">AKA:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="aka" name="aka" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xl-side-33">
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="prefix">Prefix:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="prefix" name="prefix" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="fname">First Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="fname" name="firstname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="mname">Middle Name:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="mname" name="middlename" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname" name="lastname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name2:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname2" name="lastname2" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="d-flex d-center w-100">
+                                                            <div class="right-align-item w-50">
+                                                                <label for="suffix">Suffix:</label>
+                                                            </div>
+                                                            <div class="left-align-item w-50">
+                                                                <input type="text" class="input-tag" id="Suffix" name="Suffix" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="aka">AKA:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="aka" name="aka" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="xl-side-33">
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="prefix">Prefix:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="prefix" name="prefix" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="fname">First Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="fname" name="firstname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="mname">Middle Name:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="mname" name="middlename" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname" name="lastname" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="lname">Last Name2:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="lname2" name="lastname2" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="d-flex d-center w-100">
+                                                            <div class="right-align-item w-50">
+                                                                <label for="suffix">Suffix:</label>
+                                                            </div>
+                                                            <div class="left-align-item w-50">
+                                                                <input type="text" class="input-tag" id="Suffix" name="Suffix" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div>
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="aka">AKA:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <input type="text" class="input-tag" id="aka" name="aka" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </section>
+                        
+                    </div>
+                </div>
+            </main>
+        </body>
+        <script src="./assets/js/main.js"></script>
+        </html>
