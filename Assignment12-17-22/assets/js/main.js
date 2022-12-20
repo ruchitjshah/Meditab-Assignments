@@ -212,3 +212,20 @@ function addContactDetailFrom(){
 function removeContactForm(deleteBtn){
     deleteBtn.closest('.contact-detail-form').remove();
 }
+
+function closeSideMenu(){
+    const sidemenuclosebtn = document.getElementById('side-menu-close-btn').classList;
+    const leftsidenav = document.getElementById('leftsidenav');
+    if(sidemenuclosebtn.contains('fa-angle-left')){
+        sidemenuclosebtn.remove('fa-angle-left');
+        sidemenuclosebtn.add('fa-angle-right');
+        leftsidenav.style.width = "1%";
+    }
+    else
+    {
+        sidemenuclosebtn.remove('fa-angle-right');
+        sidemenuclosebtn.add('fa-angle-left');
+        leftsidenav.style.width = "20%";
+    }
+    
+}
