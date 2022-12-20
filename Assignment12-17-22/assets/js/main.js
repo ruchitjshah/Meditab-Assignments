@@ -225,7 +225,7 @@ function closeSideMenu(){
     {
         sidemenuclosebtn.remove('fa-angle-right');
         sidemenuclosebtn.add('fa-angle-left');
-        leftsidenav.style.width = "20%";
+        leftsidenav.style.width = "16%";
     }
     
 }

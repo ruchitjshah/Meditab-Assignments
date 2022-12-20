@@ -431,14 +431,54 @@ input:checked{
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-    body {
-        background-color: yellow;
-    }
+    
+    .topnav-left {
+            display: none;
+        }
+    .leftsidenav {
+            min-width: 36%;
+            width: 25%;
+        }
+    
+        .leftsidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 1rem;
+            color: var(--font-dark-color);
+            /* font-weight: 600; */
+            display: flex;
+        }
+    .patient-general-info {
+            flex-direction: column;
+            align-items: end;
+            justify-content: flex-end
+        }
+    
+        .patient-contact-info .contact-detail-form-container {
+            flex-direction: column;
+            height: 60vh;
+            overflow-y: scroll;
+        }
+    
+        .patient-form-container .patient-image {
+            border-radius: 0.5rem;
+            width: 40%;
+            height: 20%;
+        }
+    
+        .xl-side-33 {
+            width: 100%;
+        }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
+    
+.topnav-left {
+        display: none;
+    }
     .leftsidenav{
+        min-width: 26%;
         width: 20%;
     }
     .leftsidenav a {
@@ -463,7 +503,7 @@ input:checked{
     
     .patient-form-container .patient-image {
         border-radius: 0.5rem;
-        width: 25%;
+        width: 28%;
         height: 20%;
     }
     
@@ -473,8 +513,11 @@ input:checked{
 }
 
 /* Media Query for Laptops and Desktops */
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) and (max-width: 1225px) {
 
+    .topnav-left {
+        display: none;
+    }
     .leftsidenav a {
             padding: 8px 8px 8px 16px;
             text-decoration: none;
