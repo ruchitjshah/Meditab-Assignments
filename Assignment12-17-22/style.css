@@ -39,6 +39,7 @@ input:checked{
     font-size: 0.8rem;
     border: none;
     border-radius: 0.2rem;
+    cursor: pointer;
 }
 
 .btn-secondary{
@@ -98,9 +99,9 @@ input:checked{
     
 }
 
-.main-header{
+/* .main-header{
     height: 6%;
-}
+} */
 
 .topnav {
     background-color: var(--navanar-backgroung);
@@ -139,6 +140,10 @@ input:checked{
 .topnav .topnav-right {
     display: flex;
     float: right;
+}
+
+.topnav .toggle-menu{
+    display: none;
 }
 
 .main-container{
@@ -299,9 +304,11 @@ input:checked{
 }
 
 .patient-form-container .patient-image{
-    border-radius: 0.5rem;
-    width: 40%;
-    height: 35%;
+    border-radius: 1.5rem;
+    width: 8rem;
+    height: 8rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 24%), 0 4px 8px rgb(0 0 0 / 12%);
+    margin-bottom: 0.5rem;
 }
 
 .patient-general-info,
@@ -367,7 +374,15 @@ input:checked{
     padding: 0.4rem 0.2rem;
     box-shadow: none;
     background: transparent;
+    opacity: 1;
 }
+
+.select-option:disabled{
+    opacity: 0.25;
+    background-color: #627d98ce;
+    border: 1px solid #243b53;
+}
+
 .patient-contact-info {
     flex-direction: column;
     padding: 1rem;
@@ -432,12 +447,46 @@ input:checked{
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
     
+    /* .main-header{
+        height: 7.5%;
+    } */
+
+    .main-container{
+        height: 92.5%;
+        width: 100%;
+        bottom: 0;
+        /* border: 1px solid black; */
+        overflow: hidden;
+    }
+    .rightnav{
+        width: 4%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        position: fixed;
+        right: 0;
+        background-color: var(--navanar-backgroung);
+        border-left: 1px solid var(--border-color);
+    }
+
+    .topnav .toggle-menu{
+        display: block;
+    }
     .topnav-left {
             display: none;
-        }
+    }
+
+    .leftside-main{
+        left: 0;
+        width: 96%;
+        height: 100%;
+        overflow: hidden;
+        /* border: 1px solid black; */
+    }
+
     .leftsidenav {
-            min-width: 36%;
-            width: 25%;
+            /* min-width: 25%; */
+            width: 36%;
         }
     
         .leftsidenav a {
@@ -461,9 +510,11 @@ input:checked{
         }
     
         .patient-form-container .patient-image {
-            border-radius: 0.5rem;
-            width: 40%;
-            height: 20%;
+        border-radius: 1.5rem;
+            width: 8rem;
+            height: 8rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 24%), 0 4px 8px rgb(0 0 0 / 12%);
+            margin-bottom: 0.5rem;
         }
     
         .xl-side-33 {
@@ -474,13 +525,49 @@ input:checked{
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
     
+    /* .main-header{
+        height: 7.8%;
+    } */
+
+    .main-container{
+        height: 92.2%;
+        width: 100%;
+        bottom: 0;
+        /* border: 1px solid black; */
+        overflow: hidden;
+    }
+
+    .rightnav{
+        width: 5%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        position: fixed;
+        right: 0;
+        background-color: var(--navanar-backgroung);
+        border-left: 1px solid var(--border-color);
+    }
+    .topnav .toggle-menu{
+        display: block;
+    }
+
 .topnav-left {
         display: none;
     }
+    
+    .leftside-main{
+        left: 0;
+        width: 95%;
+        height: 100%;
+        overflow: hidden;
+        /* border: 1px solid black; */
+    }
+
     .leftsidenav{
-        min-width: 26%;
+        /* min-width: 26%; */
         width: 20%;
     }
+
     .leftsidenav a {
             padding: 6px 8px 6px 16px;
             text-decoration: none;
@@ -502,9 +589,11 @@ input:checked{
     }
     
     .patient-form-container .patient-image {
-        border-radius: 0.5rem;
-        width: 28%;
-        height: 20%;
+        border-radius: 1.5rem;
+            width: 8rem;
+            height: 8rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 24%), 0 4px 8px rgb(0 0 0 / 12%);
+            margin-bottom: 0.5rem;
     }
     
     .xl-side-33 {
@@ -514,10 +603,46 @@ input:checked{
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1225px) {
+    
+    /* .main-header{
+        height: 7.8%;
+    } */
+
+    .main-container{
+        height: 92.2%;
+        width: 100%;
+        bottom: 0;
+        /* border: 1px solid black; */
+        overflow: hidden;
+    }
+
+    .rightnav{
+        width: 4%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        position: fixed;
+        right: 0;
+        background-color: var(--navanar-backgroung);
+        border-left: 1px solid var(--border-color);
+    }
+
+    .topnav .toggle-menu{
+        display: block;
+    }
 
     .topnav-left {
         display: none;
     }
+
+    .leftside-main{
+        left: 0;
+        width: 96%;
+        height: 100%;
+        overflow: hidden;
+        /* border: 1px solid black; */
+    }
+
     .leftsidenav a {
             padding: 8px 8px 8px 16px;
             text-decoration: none;
@@ -539,9 +664,11 @@ input:checked{
     }
     
     .patient-form-container .patient-image {
-        border-radius: 0.5rem;
-        width: 25%;
-        height: 20%;
+        border-radius: 1.5rem;
+    width: 8rem;
+    height: 8rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 24%), 0 4px 8px rgb(0 0 0 / 12%);
+    margin-bottom: 0.5rem;
     }
     
     .xl-side-33 {
