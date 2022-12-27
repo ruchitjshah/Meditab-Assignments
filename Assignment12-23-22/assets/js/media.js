@@ -14,6 +14,6 @@ function changeSizeFunc(){
         sidemenuclosebtn.remove('fa-angle-right');
         sidemenuclosebtn.add('fa-angle-left');
         
-        leftsidenav.style.width = "16%";
+        leftsidenav.style.width = "13%";
     }
 }

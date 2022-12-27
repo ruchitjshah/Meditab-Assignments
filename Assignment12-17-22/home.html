@@ -136,19 +136,20 @@
                     
                     <div class="patient-main-container">
                         <div class="form-buttons-section">
-                            <div class="form-buttons">
-                                <div style="float: right; padding: 0.5rem; font-size: 1.2rem;">
+                            
+                                <div class="form-buttons" style="text-align: right; padding: 0.5rem; font-size: 1.2rem;">
                                     <i class="fa-solid fa-square-check" style="color: #20b2aa; padding: 0 0.3rem 0 0;"></i><span style="font-size: 1rem;">Active</span>
                                     <i class="fa-solid fa-ellipsis-vertical" style="padding: 0 1rem 0 1rem;"></i>
                                     <button type="button" class="btn btn-secondary">Re-Verify</button>
                                     <button type="button" id="resetbtn" class="btn btn-secondary">Cancel Changes</button>
                                     <button type="submit" class="btn btn-primary" form="patient-info-form"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 0.3rem; color: orange;"></i>Save</button>
                                 </div>
-                            </div>
+                
                         </div>
                         <div class="patient-form-container">
                             <div class="form-section">
                                 <form action="#" id="patient-info-form">
+
                                     <div class="patient-general-info mb-bottom-2">
                                         <div class="xl-side-33">
                                             <div>
@@ -526,7 +527,7 @@
                                                             <label for="fee-schedule">Fee Schedule:</label>
                                                         </div>
                                                         <div class="left-align-item w-50">
-                                                            <select name="fee-schedule" id="fee-schedule" class="select-option" disabled>
+                                                            <select name="fee-schedule" id="fee-schedule" class="select-option" disabled style="cursor: no-drop;">
                                                                 <option value=""></option>
                                                             </select>
                                                         </div>
@@ -535,9 +536,10 @@
                                                 
                                         </div>
                                     </div>    
+
                                      <div class="patient-contact-info">
                                             <div class="contact-header">
-                                                <h2>Contact Details <i class="fa-solid fa-circle-plus cursor-pointer" onclick="addContactDetailFrom()"></i></h2>
+                                                <h2>Contact Details <i style="font-size: 1.2rem;" class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addContactDetailFrom()"></i></h2>
                                                 <span>Please set the preferences after adding the contact information, the section to set preference
                                                     can
                                                     be found below the
@@ -556,11 +558,11 @@
                                                                 <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
                                                                     <div>
                                                                         <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer d-none" id="add-address-btn"
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
                                                                                 onclick=" addAddressField(this)"></i></span>
                                                                     </div>
                                                                     <div class="right-align-item">
-                                                                        <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeContactForm(this)"></i>
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div id="address-field">
@@ -616,14 +618,14 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="margin-tbr">
-                                                                            <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeAddressField(this)"></i>
+                                                                            <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                     
                                                                 <div class="phone-form">
                                                                     <span class="font-dark" style="font-weight: 700;">Phone <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addPhoneField(this)"></i></span>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i></span>
                                                                     <div class="phone-field">
                                                                         <div class="d-flex w-100 border-bottom phone-lable">
                                                                             <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
@@ -670,7 +672,7 @@
                                                                     
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removePhoneField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
                                                                             </div>
                                                                     
                                                                         </div>
@@ -680,7 +682,7 @@
                                                                 
                                                                 <div class="fax-field" style="margin-top: 0.5rem;">
                                                                     <label class="font-dark" for="" style="font-weight: 700;">Fax <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addFaxField(this)"></i></label>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i></label>
                                                                     <div class="fax-field-container">
                                                                         <div class="d-flex fax-field-lable border-bottom">
                                                                             <div class="d-flex w-100">
@@ -704,7 +706,7 @@
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 25%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeFaxField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
                                                                             </div>
                                                                         
                                                                         </div>
@@ -716,7 +718,7 @@
                                                                 <div class="email-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Email <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addEmailField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i></label>
                                                                     </div>
                                                                     <div class="email-input">
                                                                         <div class="d-flex single-email d-center">
@@ -724,7 +726,7 @@
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeEmailField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -733,7 +735,7 @@
                                                                 <div class="website-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Website <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addWebsiteField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i></label>
                                                                     </div>
                                                                     <div class="website-input">
                                                                         <div class="d-flex d-center single-website">
@@ -741,7 +743,7 @@
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeWebsiteField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeWebsiteField(this)"></i>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -761,11 +763,11 @@
                                                                 <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
                                                                     <div>
                                                                         <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer d-none" id="add-address-btn"
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
                                                                                 onclick=" addAddressField(this)"></i></span>
                                                                     </div>
                                                                     <div class="right-align-item">
-                                                                        <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeContactForm(this)"></i>
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div id="address-field">
@@ -821,14 +823,14 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="margin-tbr">
-                                                                            <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeAddressField(this)"></i>
+                                                                            <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                     
                                                                 <div class="phone-form">
                                                                     <span class="font-dark" style="font-weight: 700;">Phone <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addPhoneField(this)"></i></span>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i></span>
                                                                     <div class="phone-field">
                                                                         <div class="d-flex w-100 border-bottom phone-lable">
                                                                             <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
@@ -875,7 +877,7 @@
                                                                     
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removePhoneField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
                                                                             </div>
                                                                     
                                                                         </div>
@@ -885,7 +887,7 @@
                                                                 
                                                                 <div class="fax-field" style="margin-top: 0.5rem;">
                                                                     <label class="font-dark" for="" style="font-weight: 700;">Fax <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addFaxField(this)"></i></label>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i></label>
                                                                     <div class="fax-field-container">
                                                                         <div class="d-flex fax-field-lable border-bottom">
                                                                             <div class="d-flex w-100">
@@ -909,7 +911,7 @@
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 25%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeFaxField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
                                                                             </div>
                                                                         
                                                                         </div>
@@ -921,7 +923,7 @@
                                                                 <div class="email-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Email <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addEmailField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i></label>
                                                                     </div>
                                                                     <div class="email-input">
                                                                         
@@ -931,7 +933,7 @@
                                                                 <div class="website-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Website <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addWebsiteField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i></label>
                                                                     </div>
                                                                     <div class="website-input">
                                                                         
@@ -944,10 +946,94 @@
                                                     
                                                 </div>
                                     </div>
-                                            
+
+                                    <div class="patient-contact-preference-info">
+                                        <div class="contact-header w-100" style="margin-bottom: 0.5rem;">
+                                            <h2>Contact Preference</h2>
+                                        </div>
+                                        <div class="w-100">
+                                            <table class="w-100">
+                                                <tr class="font-dark">
+                                                    <th style="width: 15%;">Type</th>
+                                                    <th style="width: 20%;">Address</th>
+                                                    <th style="width: 15%;">Phone</th>
+                                                    <th style="width: 15%;">Fax</th>
+                                                    <th style="width: 15%;">Email</th>
+                                                    <th style="width: 15%;">Website</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="Appointment Reminder" disabled style="background-color: #e8ebed;"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="" disabled></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="7073221076"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="" disabled></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="ashishj@meditab.com"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="" disabled></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="Mailing" disabled style="background-color: #e8ebed;"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="221 N Shaw Ave, FRESNO, CALIFORNIA 93727, US"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="7073221076"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="9712229147"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="ashishj@meditab.com"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value=""></td>
+</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="Primary" disabled style="background-color: #e8ebed;"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="221 N Shaw Ave, FRESNO, CALIFORNIA 93727, US"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="7073221076"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="9712229147"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="ashishj@meditab.com"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="Statement" disabled style="background-color: #e8ebed;"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="221 N Shaw Ave, FRESNO, CALIFORNIA 93727, US"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="7073221076"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="9712229147"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value="ashishj@meditab.com"></td>
+                                                    <td><input type="text" class="table-input-tag" id="" name="" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-dark" style="font-weight: 700; padding-left: 0.3rem;">Preferred Comm.</td>
+                                                    <td colspan="5">
+                                                        <div class="d-flex">
+                                                            <div class="d-flex d-center w-100">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="type" style="padding-right: 0.5rem;">Type:</label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <select name="type" id="type" class="select-option">
+                                                                        <option value="Male">Email</option>
+                                                                        <option value="Female">Fax</option>
+                                                                        <option value="Unknown">Mail</option>
+                                                                        <option value="Unknown">Phone</option>
+                                                                        <option value="Unknown">Text</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex d-center w-100" style="padding-right: 0.4rem;">
+                                                                <div class="right-align-item w-50">
+                                                                    <label for="value" style="padding-right: 0.5rem;">Value:<span class="require-field">*</span></label>
+                                                                </div>
+                                                                <div class="left-align-item w-50">
+                                                                    <select name="value" id="value" class="select-option">
+                                                                        <option value="Male">7073221076</option>
+                                                                        <option value="Female">9712229147</option>
+                                                                    </select>
+                                                                    <span class="require-field" style="font-size: 0.7rem; font-weight: 600;" id="require-sex"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div> 
+
                                     <div class="patient-other-info-main mb-bottom-2" id="patient-other-info-form">
                                                 <div class="other-info-header">
-                                                    <h2 ><i class="fa-solid fa-circle-chevron-right cursor-pointer" id="other-info-btn" onclick="openOtherInfoForm()"></i> Other Details</h2>
+                                                    <h2 ><i class="fa-solid fa-circle-chevron-right cursor-pointer btn-scale" id="other-info-btn" onclick="openOtherInfoForm()"></i> Other Details</h2>
                                                 </div>
                                                 <div class="d-flex d-flex-lg-col d-flex-md-col d-flex-sm-col">
                                                     <div class="xl-side-33">
@@ -1198,6 +1284,7 @@
                                                         </div>
                                                         
                                                     </div>
+                            
                                                 </div>
                                     </div>
 

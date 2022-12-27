@@ -112,6 +112,12 @@ input:checked{
     
 }
 
+.btn-scale:hover{
+    color: var(--purple);
+    transform: scale(1.2);
+    transform-origin: left;
+}
+
 /* .main-header{
     height: 6%;
 } */
@@ -148,6 +154,11 @@ input:checked{
     padding: 0.5rem 1rem;
     box-shadow: none;
     background: transparent;
+}
+
+.topnav .searchpatientbox:focus {
+    outline: none;
+    border: 2px solid var(--purple);
 }
 
 .topnav .topnav-right {
@@ -256,7 +267,7 @@ input:checked{
 }
 .leftsidenav{
     /* display: none; */
-    width: 16%;
+    width: 13%;
     left: 0;
     /* border: 2px solid var(--border-color); */
     border-radius: 0.5rem;
@@ -278,7 +289,7 @@ input:checked{
 .leftsidenav a {
     padding: 8px 8px 8px 16px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--font-dark-color);
     /* font-weight: 600; */
     display: flex;
@@ -316,6 +327,11 @@ input:checked{
     overflow-y: scroll;
 }
 
+.form-buttons-section{
+    position: relative;
+    z-index: 1;
+}
+
 .patient-form-container .patient-image{
     border-radius: 1.5rem;
     width: 8rem;
@@ -340,21 +356,71 @@ input:checked{
 .patient-other-info-main{
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1rem;
     justify-content: space-between;
     /* flex-flow: row; */
     background-color: var(--navanar-backgroung);
     color: #627d98;
     border-radius: 0.4rem;
     margin: 0.5rem;
-    height: 4rem;
+    height: 3.5rem;
     overflow: hidden;
     margin-bottom: 1.5rem;
     /* transition: height 0.3s; */
 }
 
+.patient-contact-preference-info{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+        /* flex-flow: row; */
+    background-color: var(--navanar-backgroung);
+    color: #627d98;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+    margin-bottom: 1.5rem
+}
+.patient-contact-preference-info table, th, td{
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+    
+}
+.patient-contact-preference-info table th{
+    text-align: left;
+}
+.patient-contact-preference-info table .table-input-tag{
+    width: 100%;
+    font-size: 0.9rem;
+    color: #243b53;
+    padding: 0.4rem 0.2rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-overflow: ellipsis;
+}
+
+.patient-contact-preference-info table .table-input-tag:focus {
+    border: 2px solid var(--purple);
+}
+.patient-contact-preference-info table .select-option:focus {
+    border: 2px solid var(--purple);
+}
+
+.patient-contact-preference-info table .table-input-tag:disabled{
+    
+    cursor: not-allowed;
+    background-color: #f0f0f0;
+    /* border: 3px solid #e0e0e0; */
+    /* background-color: #e8ebed; */
+}
+
+.patient-contact-preference-info table, th{
+    padding: 0.5rem;
+}
+
 .patient-contact-info{
-    overflow-x: scroll;
+    overflow: hidden;
 }
 
 .patient-general-info .xl-side-33 .right-align-item{
@@ -380,6 +446,11 @@ input:checked{
     padding: 0.4rem 0.2rem;
     box-shadow: none;
     background: transparent;
+}
+
+.input-tag:focus , .select-option:focus{
+    outline: none;
+    border: 2px solid var(--purple) !important;
 }
 
 .select-option {
@@ -423,6 +494,8 @@ input:checked{
     max-width: 100%;
     min-width: 40%;
     padding: 0.5rem;
+    overflow: hidden;
+    overflow-x: scroll;
 }
 
 .contact-detail-form-container .border {

@@ -15,11 +15,11 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                 <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
                                                                     <div>
                                                                         <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer d-none" id="add-address-btn"
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
                                                                                 onclick=" addAddressField(this)"></i></span>
                                                                     </div>
                                                                     <div class="right-align-item">
-                                                                        <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeContactForm(this)"></i>
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div id="address-field">
@@ -75,14 +75,14 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                             </div>
                                                                         </div>
                                                                         <div class="margin-tbr">
-                                                                            <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeAddressField(this)"></i>
+                                                                            <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                     
                                                                 <div class="phone-form">
                                                                     <span class="font-dark" style="font-weight: 700;">Phone <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addPhoneField(this)"></i></span>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i></span>
                                                                     <div class="phone-field">
                                                                         <div class="d-flex w-100 border-bottom phone-lable">
                                                                             <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
@@ -129,7 +129,7 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                     
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removePhoneField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
                                                                             </div>
                                                                     
                                                                         </div>
@@ -139,7 +139,7 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                 
                                                                 <div class="fax-field" style="margin-top: 0.5rem;">
                                                                     <label class="font-dark" for="" style="font-weight: 700;">Fax <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer" onclick="addFaxField(this)"></i></label>
+                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i></label>
                                                                     <div class="fax-field-container">
                                                                         
                                                                     </div>
@@ -150,7 +150,7 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                 <div class="email-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Email <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addEmailField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i></label>
                                                                     </div>
                                                                     <div class="email-input">
                                                                         <div class="d-flex single-email d-center">
@@ -158,7 +158,7 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeEmailField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -167,7 +167,7 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                                 <div class="website-field" style="width: 66%;" class="margin-tbr">
                                                                     <div style="margin-top: 0.5rem;">
                                                                         <label class="font-dark" for="" style="font-weight: 700;">Website <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer" onclick="addWebsiteField(this)"></i></label>
+                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i></label>
                                                                     </div>
                                                                     <div class="website-input">
                                                             
@@ -180,6 +180,17 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
 const userdob = document.getElementById('dob');
 var age;
 userdob.addEventListener('change',getAge);
+
+const form_scroll = document.querySelector('.patient-form-container');
+form_scroll.addEventListener('scroll', (event) => {
+    let scroll = form_scroll.scrollTop;
+    if (scroll == 0) {
+        document.querySelector('.form-buttons-section').style.boxShadow = "none";
+    } else{
+        document.querySelector('.form-buttons-section').style.boxShadow = "0px 4px 5px rgb(162 165 169 / 25%)";
+    }
+});
+
 function getAge(){
     var dob = new Date(userdob.value);
     var nowdate = new Date();
@@ -195,8 +206,11 @@ function saveFormData(event) {
     const sex = document.getElementById('sex').value;
 
     if(fname != ""){
+        document.getElementById('require-fname').innerHTML = '';
         if(lname != ""){
+            document.getElementById('require-lname').innerHTML = '';
             if(sex != ""){
+                document.getElementById('require-sex').innerHTML = '';
                 if(age > 18){
                     const myFormData = new FormData(event.target);
                     const formDataObj = {};
@@ -209,11 +223,11 @@ function saveFormData(event) {
                 }
             }
             else{
-                document.getElementById('require-sex').innerHTML = 'Please Enter Sex'
+                document.getElementById('require-sex').innerHTML = 'Please Enter Sex';
             }
         }
         else{
-            document.getElementById('require-lname').innerHTML = 'Please Enter Last Name'
+            document.getElementById('require-lname').innerHTML = 'Please Enter Last Name';
         }
     }
     else{
@@ -261,7 +275,7 @@ function openOtherInfoForm(){
         otherformopenbtn.remove('fa-circle-chevron-down');
         otherformopenbtn.add('fa-circle-chevron-right');
         // patientotherinfo.style.transition = "height 1s";
-        patientotherinfo.style.height = "4rem";
+        patientotherinfo.style.height = "3.5rem";
     }
     else
     {
@@ -325,7 +339,7 @@ function addAddressField(addaddressbtn){
                                                                             </div>
                                                                         </div>
                                                                         <div class="margin-tbr">
-                                                                            <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeAddressField(this)"></i>
+                                                                            <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                         </div>
                                                                     </div>`;
     addaddressbtn.closest('.contact-container').querySelector('#address-field').innerHTML += addressFieldstr;
@@ -366,7 +380,7 @@ function addPhoneField(addphonebtn){
                                                                     
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removePhoneField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
                                                                             </div>
                                                                     
                                                                         </div>`;
@@ -423,7 +437,7 @@ function addFaxField(addfaxfieldbtn){
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div class="margin-tbr" style="width: 25%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeFaxField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
                                                                             </div>
                                                                         
                                                                         </div>`;
@@ -446,7 +460,7 @@ function addEmailField(addemailfieldbtn){
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeEmailField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
                                                                             </div>
                                                                         </div>`;
     addemailfieldbtn.closest('.email-field').querySelector('.email-input').innerHTML += addemailinputstr;
@@ -462,7 +476,7 @@ function addWebsiteField(addemailfieldbtn){
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                             <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer" onclick="removeWebsiteField(this)"></i>
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeWebsiteField(this)"></i>
                                                                             </div>
                                                                         </div>`;
     addemailfieldbtn.closest('.website-field').querySelector('.website-input').innerHTML += addemailinputstr;
