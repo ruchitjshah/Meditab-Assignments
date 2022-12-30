@@ -269,7 +269,7 @@ function resetFormData(){
 
 function addContactDetailFrom(){
  
-    document.getElementById('contact-detail-form').innerHTML +=contactFormDetailHTML;
+    document.getElementById('contact-detail-form').insertAdjacentHTML('beforeend', contactFormDetailHTML);
 }
 
 function removeContactForm(deleteBtn){
@@ -367,7 +367,7 @@ function addAddressField(addaddressbtn){
                                                                             <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                         </div>
                                                                     </div>`;
-    addaddressbtn.closest('.contact-container').querySelector('#address-field').innerHTML += addressFieldstr;
+    addaddressbtn.closest('.contact-container').querySelector('#address-field').insertAdjacentHTML('beforeend', addressFieldstr);
     document.getElementById('add-address-btn').style.display = 'none';
 }
 
@@ -427,9 +427,9 @@ function addPhoneField(addphonebtn){
                                                                             </div>
                                                                         </div>`;
     if(addphonebtn.closest('.phone-form').querySelector('.phone-field').childElementCount == 0){
-        addphonebtn.closest('.phone-form').querySelector('.phone-field').innerHTML += addphonefieldlablestr;
+        addphonebtn.closest('.phone-form').querySelector('.phone-field').insertAdjacentHTML('beforeend', addphonefieldlablestr);
     }
-    addphonebtn.closest('.phone-form').querySelector('.phone-field').innerHTML += addphonefieldinputstr;
+    addphonebtn.closest('.phone-form').querySelector('.phone-field').insertAdjacentHTML('beforeend', addphonefieldinputstr);
 }
 function removePhoneField(removephonebtn){
 
@@ -468,10 +468,10 @@ function addFaxField(addfaxfieldbtn){
                                                                         </div>`;
 
     if(addfaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').childElementCount == 0){
-        addfaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').innerHTML += addfaxfieldlablestr;
+        addfaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').insertAdjacentHTML('beforeend', addfaxfieldlablestr);
     }
-    addfaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').innerHTML += addfaxfieldinputstr;
-}
+    addfaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').insertAdjacentHTML('beforeend', addfaxfieldinputstr);
+}r
 function removeFaxField(removefaxfieldbtn){
     if(removefaxfieldbtn.closest('.fax-field').querySelector('.fax-field-container').childElementCount == 2){
         removefaxfieldbtn.closest('.fax-field-container').innerHTML = '';
@@ -488,7 +488,7 @@ function addEmailField(addemailfieldbtn){
                                                                                 <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
                                                                             </div>
                                                                         </div>`;
-    addemailfieldbtn.closest('.email-field').querySelector('.email-input').innerHTML += addemailinputstr;
+    addemailfieldbtn.closest('.email-field').querySelector('.email-input').insertAdjacentHTML('beforeend', addemailinputstr);
 
 }
 function removeEmailField(removeemailfieldbtn){
@@ -504,7 +504,7 @@ function addWebsiteField(addemailfieldbtn){
                                                                                 <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeWebsiteField(this)"></i>
                                                                             </div>
                                                                         </div>`;
-    addemailfieldbtn.closest('.website-field').querySelector('.website-input').innerHTML += addemailinputstr;
+    addemailfieldbtn.closest('.website-field').querySelector('.website-input').insertAdjacentHTML('beforeend', addemailinputstr);
 
 }
 function removeWebsiteField(removeemailfieldbtn){
