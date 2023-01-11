@@ -152,6 +152,7 @@ create table preference(
     modified_on timestamp default current_timestamp not null
 );
 insert into preference(preference_type_id, patient_id, address_id, phone_id, fax_id) values(1,1,1,1,1);
+insert into preference(preference_type_id, patient_id, address_id, phone_id, fax_id) values(2,1,2,1,1);
 select * from preference;
 
 

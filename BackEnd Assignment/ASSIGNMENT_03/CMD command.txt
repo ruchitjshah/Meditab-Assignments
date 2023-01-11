@@ -1,0 +1,4 @@
+dotnet ef dbcontext scaffold "Server=172.16.4.64;Port=5432;Database=ruchits;User Id=postgres;Password=99$inmedi;" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -f
+
+
+dotnet ef dbcontext scaffold "Host=172.16.4.64:5432;Database=ruchits;Username=postgres;Password=99$inmedi;" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -f
