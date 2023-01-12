@@ -1,21 +1,39 @@
 ﻿namespace WebApplication1.Models
 {
-    public class PatientDemographicsModel
+    public class PatientDemographicsModelList
     {
-        public int patient_id { get; }
+        public List<PatientDemographicsModelResponse>? PatientDemographics { get; set; }
+    }
+    public class PatientDemographicsModelResponse
+    {
 
-        public string? chartnumber { get; }
+        public string? firstname { get; set; } = null;
 
-        public string? firstname { get; set; }
+        public string? middlename { get; set; } = null;
 
-        public string? middlename { get; set; }
+        public string? lastname { get; set; } = null;
 
-        public string? lastname { get; set; }
+        public DateTime? dob { get; set; } = null;
 
-        public DateTime dob { get; set; }
+        public int? gender_id { get; set; } = null;
+    }
 
-        public int gender_id { get; set; }
+    public class PatientDemographicsModelRequest
+    {
+        public int? patient_id { get; set; } = null;
 
-        public bool is_deleted { get; set; }
+        public string? firstname { get; set; } = null;
+
+        public string? lastname { get; set; } = null;
+
+        public DateTime? dob { get; set; } = null;
+
+        public int? gender_id { get; set; } = null;
+
+        public int? pagenumber { get; set; } = null;
+
+        public int? pagesize { get; set; } = null;
+
+        public string? orderby { get; set; } = null;
     }
 }

@@ -12,27 +12,28 @@ namespace WebApplication1.ServiceLayer
             _patientDemographicsDAL = patientDemographicsDAL;
         }
 
-        public async Task<JsonResult> DeleteUser(int id)
+        public async Task<string> DeleteUser(int id)
         {
             return await _patientDemographicsDAL.DeleteUser(id);
         }
 
-        public async Task<JsonResult> Get(int id)
+        public async Task<PatientDemographicsModelList> Get(int id)
         {
             return await _patientDemographicsDAL.Get(id);
         }
 
-        public async Task<JsonResult> GetAll(int? id = null, string? firstname = null, string? lastname = null, string? gender = null, string? dob = null, string? oderby_value = null, int? pagenumber = null, int? pagesize = null)
+        public async Task<PatientDemographicsModelList> GetFilterData(PatientDemographicsModelRequest request)
         {
-            return await _patientDemographicsDAL.GetAll(id, firstname,lastname, gender,dob, oderby_value, pagenumber ,pagesize);
+            return await _patientDemographicsDAL.GetFilterData(request);
         }
 
-        public async Task<JsonResult> InsertData(PatientDemographicsModel pt)
+       
+        public async Task<int> InsertData(PatientDemographicsModelResponse pt)
         {
             return await _patientDemographicsDAL.InsertData(pt);
         }
 
-        public async Task<JsonResult> UpdateData(int id, PatientDemographicsModel pt)
+        public async Task<int> UpdateData(int id, PatientDemographicsModelResponse pt)
         {
             return await _patientDemographicsDAL.UpdateData(id, pt);
         }

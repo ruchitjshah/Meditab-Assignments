@@ -21,97 +21,67 @@ namespace WebApplication1.Controllers
             _configuration = configuration;
             _patientDemographicsSL = patientDemographicsSL;
         }
-        
-        [HttpGet]
-        public async Task<JsonResult> GetAll(int? id = null, string? firstname = null, string? lastname = null, string? gender = null, string? dob = null, string? oderby_value = null, int? pagenumber = null, int? pagesize = null  )
-        {
-            try 
-            {
-                return new JsonResult(await _patientDemographicsSL.GetAll(id, firstname, lastname, gender, dob, oderby_value, pagenumber, pagesize));
-            }
-            catch(Exception ex) 
-            {
-                return new JsonResult(ex);
-            }
 
-        }
-
+        /// <summary>
+        /// This method returns the patient record by the id that will passed in get method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>returns patient record in model format</returns>
         [HttpGet("{id}")]
-        public async Task<JsonResult> Get(int id)
+        public async Task<PatientDemographicsModelList> Get(int id)
         {
-            try
-            {
-                return new JsonResult(await _patientDemographicsSL.Get(id));
-            }
-            catch (Exception ex)
-            {
-                return new JsonResult(ex);
-            }
+            return await _patientDemographicsSL.Get(id);
         }
 
-        [HttpGet("getdeleteddata")]
-        public JsonResult GetDeletedData()
+        /// <summary>
+        /// This method is used for filtering data using Firstname, Lastname, Dob, Gender, and Patient Id. Also we can do pagination using it and sorting using firstname, lastname, patient id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Returns patient record</returns>
+        [HttpPost("GetData")]
+        public async Task<PatientDemographicsModelList> GetFilterData(PatientDemographicsModelRequest request)
         {
-            string query = @"
-                select chartnumber, firstname, middlename, lastname, to_char(dob,'YYYY-MM-DD') as ""dob"", gender_id
-                from patient_demographics where is_deleted = true
-            ";
-
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
-            NpgsqlDataReader myReader;
-            using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-
-                    myReader.Close();
-                    myCon.Close();
-
-                }
-            }
-            return new JsonResult(table);
+                return await _patientDemographicsSL.GetFilterData(request);
         }
 
+        /// <summary>
+        /// This method is used for create/insert data of patient
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns>It will returns patient primary key</returns>
         [HttpPost]
-        public async Task<JsonResult> InsertData(PatientDemographicsModel pt)
+        public async Task<int> InsertData(PatientDemographicsModelResponse pt)
         {
-            try
-            {
-                return new JsonResult(await _patientDemographicsSL.InsertData(pt));
-            }
-            catch (Exception ex)
-            {
-                return new JsonResult(ex);
-            }
+                return await _patientDemographicsSL.InsertData(pt);
         }
 
+        /// <summary>
+        /// This method is used for update the patient data
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pt"></param>
+        /// <returns>It will returns patient primary key</returns>
         [HttpPut("{id}")]
-        public async Task<JsonResult> UpdateData(int id, PatientDemographicsModel pt)
+        public async Task<int> UpdateData(int id, PatientDemographicsModelResponse pt)
         {
-            try
-            {
-                return new JsonResult(await _patientDemographicsSL.UpdateData(id, pt));
-            }
-            catch (Exception ex)
-            {
-                return new JsonResult(ex);
-            }
+                return await _patientDemographicsSL.UpdateData(id, pt);
         }
 
+        /// <summary>
+        /// This method is used for soft delete the user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>It will return string</returns>
         [HttpDelete("{id}")]
-        public async Task<JsonResult> DeleteUser(int id)
+        public async Task<string> DeleteUser(int id)
         {
             try
             {
-                return new JsonResult(await _patientDemographicsSL.DeleteUser(id));
+                return await _patientDemographicsSL.DeleteUser(id);
             }
             catch (Exception ex)
             {
-                return new JsonResult(ex);
+                return (ex.Message);
             }
             
         }
