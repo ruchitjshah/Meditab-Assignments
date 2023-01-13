@@ -38,7 +38,7 @@ namespace WebApplication1.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns>Returns patient record</returns>
-        [HttpPost("GetData")]
+        [HttpPost("GetFilterData")]
         public async Task<PatientDemographicsModelList> GetFilterData(PatientDemographicsModelRequest request)
         {
                 return await _patientDemographicsSL.GetFilterData(request);

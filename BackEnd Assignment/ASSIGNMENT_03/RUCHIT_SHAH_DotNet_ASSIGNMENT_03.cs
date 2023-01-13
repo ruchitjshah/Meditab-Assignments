@@ -103,15 +103,15 @@ namespace WebApplication1.Controllers
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Data;
+using System.Transactions;
 using WebApplication1.Models;
 
 namespace WebApplication1.DataAccessLayer
 {
-    public class PatientDemographicsDAL : IPatientDemographicsDAL
+    public class PatientDemographicsDAL: IPatientDemographicsDAL
     {
-        private readonly IConfiguration _configuration;
-        public PatientDemographicsDAL(IConfiguration configuration)
-        {
+        private readonly IConfiguration _configuration; 
+        public PatientDemographicsDAL(IConfiguration configuration) {
             _configuration = configuration;
         }
 
@@ -142,7 +142,7 @@ namespace WebApplication1.DataAccessLayer
                     using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                     {
                         myCommand.Parameters.AddWithValue("Id", id);
-
+                       
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
 
@@ -155,7 +155,7 @@ namespace WebApplication1.DataAccessLayer
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
-                                    dob = DateTime.Parse(dr["dob"].ToString()),
+                                    dob = dr["dob"] == DBNull.Value ? null : DateTime.Parse(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
                                 }
                                 );
@@ -168,7 +168,7 @@ namespace WebApplication1.DataAccessLayer
             }
             catch (Exception ex)
             {
-                //return Task.FromResult(new JsonResult(ex));
+                Console.WriteLine(ex.Message);
             }
             return Task.FromResult(PatientData);
         }
@@ -183,8 +183,8 @@ namespace WebApplication1.DataAccessLayer
             PatientDemographicsModelList PatientData = new PatientDemographicsModelList
             {
                 PatientDemographics = new List<PatientDemographicsModelResponse>()
-            };
-
+        };
+                
             try
             {
                 string query = @"
@@ -219,7 +219,7 @@ namespace WebApplication1.DataAccessLayer
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
-                                    dob = DateTime.Parse(dr["dob"].ToString()),
+                                    dob = dr["dob"] == DBNull.Value ? null : DateTime.Parse(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
                                 }
                                 );
@@ -228,11 +228,11 @@ namespace WebApplication1.DataAccessLayer
                         myCon.Close();
 
                     }
-                }
+                } 
             }
             catch (Exception ex)
             {
-                //return Task.FromResult(new JsonResult(ex));
+                Console.WriteLine(ex.Message);
             }
             return Task.FromResult(PatientData);
         }
@@ -244,41 +244,46 @@ namespace WebApplication1.DataAccessLayer
         /// <returns>It will returns patient primary key</returns>
         public Task<int> InsertData(PatientDemographicsModelResponse pt)
         {
-            int response_id;
-            try
+            int response_id=0;
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                string query = @"
+                try
+                {
+                    string query = @"
                 select * from patientcreate(@Fname,@Maname,@Lname,@Dob::date,@Gender)";
 
-                DataTable table = new DataTable();
-                string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
-                NpgsqlDataReader myReader;
-                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
-                {
-                    myCon.Open();
-                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    DataTable table = new DataTable();
+                    string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
+                    NpgsqlDataReader myReader;
+                    using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
                     {
+                        myCon.Open();
+                        using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                        {
 
-                        myCommand.Parameters.AddWithValue("Fname", pt.firstname);
-                        myCommand.Parameters.AddWithValue("Maname", pt.middlename);
-                        myCommand.Parameters.AddWithValue("Lname", pt.lastname);
-                        myCommand.Parameters.AddWithValue("Dob", pt.dob);
-                        myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
-                        myReader = myCommand.ExecuteReader();
-                        myReader.Read();
-                        response_id = (int)myReader[0];
+                            myCommand.Parameters.AddWithValue("Fname", pt.firstname);
+                            myCommand.Parameters.AddWithValue("Maname", pt.middlename);
+                            myCommand.Parameters.AddWithValue("Lname", pt.lastname);
+                            myCommand.Parameters.AddWithValue("Dob", pt.dob);
+                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
+                            myReader = myCommand.ExecuteReader();
+                            myReader.Read();
+                            response_id = (int)myReader[0];
 
-                        myReader.Close();
-                        myCon.Close();
+                            
+                            myReader.Close();
+                            transactionScope.Complete();
+                            myCon.Close();
 
+                        }
                     }
                 }
-
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                    Console.WriteLine(ex.Message);
+                }
                 return Task.FromResult(response_id);
-            }
-            catch (Exception ex)
-            {
-                return Task.FromResult(201);
             }
         }
 
@@ -290,41 +295,48 @@ namespace WebApplication1.DataAccessLayer
         /// <returns>It will returns patient primary key</returns>
         public Task<int> UpdateData(int id, PatientDemographicsModelResponse pt)
         {
-            int response_id;
-            try
+            int response_id=0;
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                string query = @"
-            select patientupdate(@id,@Fname,@Mname,@Lname,@Dob::date,@Gender)
-        ";
-
-                DataTable table = new DataTable();
-                string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
-                NpgsqlDataReader myReader;
-                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                try
                 {
-                    myCon.Open();
-                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
-                    {
-                        myCommand.Parameters.AddWithValue("id", id);
-                        myCommand.Parameters.AddWithValue("Fname", pt.firstname);
-                        myCommand.Parameters.AddWithValue("Mname", pt.middlename);
-                        myCommand.Parameters.AddWithValue("Lname", pt.lastname);
-                        myCommand.Parameters.AddWithValue("Dob", pt.dob);
-                        myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
-                        myReader = myCommand.ExecuteReader();
-                        myReader.Read();
-                        response_id = (int)myReader[0];
-                        myReader.Close();
-                        myCon.Close();
+                    string query = @"
+                                    select patientupdate(@id,@Fname,@Mname,@Lname,@Dob::date,@Gender)
+                                    ";
 
+                    DataTable table = new DataTable();
+                    string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
+                    NpgsqlDataReader myReader;
+                    using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                    {
+                        myCon.Open();
+                        using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                        {
+                            myCommand.Parameters.AddWithValue("id", id);
+                            myCommand.Parameters.AddWithValue("Fname", pt.firstname);
+                            myCommand.Parameters.AddWithValue("Mname", pt.middlename);
+                            myCommand.Parameters.AddWithValue("Lname", pt.lastname);
+                            myCommand.Parameters.AddWithValue("Dob", pt.dob);
+                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
+                            myReader = myCommand.ExecuteReader();
+                            myReader.Read();
+                            response_id = (int)myReader[0];
+
+                            
+                            myReader.Close();
+                            transactionScope.Complete();
+                            myCon.Close();
+
+                        }
                     }
+                    
+                }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                    Console.WriteLine(ex.Message);
                 }
                 return Task.FromResult(response_id);
-            }
-            catch (Exception ex)
-            {
-
-                return Task.FromResult(204);
             }
         }
 
@@ -335,32 +347,38 @@ namespace WebApplication1.DataAccessLayer
         /// <returns>It will return string</returns>
         public Task<string> DeleteUser(int id)
         {
-            try
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                string query = @"
-            select patientdelete(@id);";
-
-                DataTable table = new DataTable();
-                string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
-                NpgsqlDataReader myReader;
-                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                try
                 {
-                    myCon.Open();
-                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
-                    {
-                        myCommand.Parameters.AddWithValue("id", id);
-                        myReader = myCommand.ExecuteReader();
+                    string query = @"select patientdelete(@id);";
 
-                        myReader.Close();
-                        myCon.Close();
+                    DataTable table = new DataTable();
+                    string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
+                    NpgsqlDataReader myReader;
+                    using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                    {
+                        myCon.Open();
+                        using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                        {
+                            myCommand.Parameters.AddWithValue("id", id);
+                            myReader = myCommand.ExecuteReader();
+
+                            
+                            myReader.Close();
+                            transactionScope.Complete();
+                            transactionScope.Dispose();
+                            myCon.Close();
+                        }
                     }
+                    return Task.FromResult("Daleted Successfully");
                 }
-                return Task.FromResult("Daleted Successfully");
-            }
-            catch (Exception ex)
-            {
-                return Task.FromResult(ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                    return Task.FromResult(ex.Message);
+                }
+            }    
         }
     }
 }
