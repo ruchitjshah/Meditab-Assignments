@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json.Serialization;
 using WebApplication1.DataAccessLayer;
 using WebApplication1.ServiceLayer;
@@ -21,9 +22,27 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDefaultFiles();
+    app.UseStaticFiles();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+/*var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseWebRoot("HTMLFiles")
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .Build();*/
+
+/*DefaultFilesOptions defaultFile = new DefaultFilesOptions();
+defaultFile.DefaultFileNames.Clear();
+defaultFile.DefaultFileNames.Add("./HTMLFiles/index.html");*/
+
+
+
+
+
 
 app.UseAuthorization();
 

@@ -22,12 +22,21 @@ namespace WebApplication1.Controllers
             _patientDemographicsSL = patientDemographicsSL;
         }
 
+
+        [HttpGet("index")]
+        public ContentResult ConfirmVerify()
+        {
+            var html = System.IO.File.ReadAllText(@"./HTMLFiles/home.html");
+            return base.Content(html, "text/html");
+        }
+
+
         /// <summary>
         /// This method returns the patient record by the id that will passed in get method
         /// </summary>
         /// <param name="id"></param>
         /// <returns>returns patient record in model format</returns>
-        [HttpGet("{id}")]
+        [HttpGet("id={id}")]
         public async Task<PatientDemographicsModelList> Get(int id)
         {
             return await _patientDemographicsSL.Get(id);
@@ -61,7 +70,7 @@ namespace WebApplication1.Controllers
         /// <param name="id"></param>
         /// <param name="pt"></param>
         /// <returns>It will returns patient primary key</returns>
-        [HttpPut("{id}")]
+        [HttpPut("id={id}")]
         public async Task<int> UpdateData(int id, PatientDemographicsModelResponse pt)
         {
                 return await _patientDemographicsSL.UpdateData(id, pt);

@@ -7,6 +7,8 @@
     public class PatientDemographicsModelResponse
     {
 
+        public string? chartnumber { get; set; } = null;
+
         public string? firstname { get; set; } = null;
 
         public string? middlename { get; set; } = null;

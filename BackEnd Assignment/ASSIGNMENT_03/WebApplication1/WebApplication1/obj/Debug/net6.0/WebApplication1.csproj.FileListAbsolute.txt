@@ -35,3 +35,4 @@ C:\Assignments\meditab-assignments-master\meditab-assignments-master\BackEnd Ass
 C:\Assignments\meditab-assignments-master\meditab-assignments-master\BackEnd Assignment\ASSIGNMENT_03\WebApplication1\WebApplication1\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Assignments\meditab-assignments-master\meditab-assignments-master\BackEnd Assignment\ASSIGNMENT_03\WebApplication1\WebApplication1\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Assignments\meditab-assignments-master\meditab-assignments-master\BackEnd Assignment\ASSIGNMENT_03\WebApplication1\WebApplication1\bin\Debug\net6.0\Npgsql.dll
+C:\Assignments\meditab-assignments-master\meditab-assignments-master\BackEnd Assignment\ASSIGNMENT_03\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.staticwebassets.runtime.json

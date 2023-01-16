@@ -12,7 +12,7 @@ left join fax f on p.fax_id = f.fax_id
 
 select * from patient_info_view;
 
-
+select * from patient_demographics pd;
 --2.0 Write Query to fetch unique record from the Patient table based on Firstname, LastName, DOB and Sex with number of occurance(count) of same data.
 select firstname, lastname, dob, gender_id, count(patient_id) as "Occurance" 
 from patient_demographics 

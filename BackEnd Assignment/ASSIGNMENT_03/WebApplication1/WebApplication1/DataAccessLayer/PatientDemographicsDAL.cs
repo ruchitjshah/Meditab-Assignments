@@ -50,6 +50,7 @@ namespace WebApplication1.DataAccessLayer
                             PatientData.PatientDemographics.Add(
                                 new PatientDemographicsModelResponse
                                 {
+                                    chartnumber = dr["chartnumber"].ToString(),
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
@@ -148,7 +149,7 @@ namespace WebApplication1.DataAccessLayer
                 try
                 {
                     string query = @"
-                select * from patientcreate(@Fname,@Maname,@Lname,@Dob::date,@Gender)";
+                select * from patientcreate(@Fname,@Mname,@Lname,@Dob::date,@Gender)";
 
                     DataTable table = new DataTable();
                     string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
@@ -159,11 +160,11 @@ namespace WebApplication1.DataAccessLayer
                         using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                         {
 
-                            myCommand.Parameters.AddWithValue("Fname", pt.firstname);
-                            myCommand.Parameters.AddWithValue("Maname", pt.middlename);
-                            myCommand.Parameters.AddWithValue("Lname", pt.lastname);
-                            myCommand.Parameters.AddWithValue("Dob", pt.dob);
-                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
+                            myCommand.Parameters.AddWithValue("Fname", pt.firstname == null || pt.firstname == ""? throw new NoNullAllowedException(): pt.firstname);
+                            myCommand.Parameters.AddWithValue("Mname", pt.middlename == null || pt.middlename == ""? DBNull.Value: pt.middlename);
+                            myCommand.Parameters.AddWithValue("Lname", pt.lastname == null || pt.lastname == "" ? throw new NoNullAllowedException() : pt.lastname);
+                            myCommand.Parameters.AddWithValue("Dob", pt.dob == null || pt.dob.ToString() == ""? DBNull.Value: pt.dob);
+                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id == null || pt.gender_id == 0 ? throw new NoNullAllowedException() : pt.gender_id);
                             myReader = myCommand.ExecuteReader();
                             myReader.Read();
                             response_id = (int)myReader[0];
@@ -211,11 +212,11 @@ namespace WebApplication1.DataAccessLayer
                         using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                         {
                             myCommand.Parameters.AddWithValue("id", id);
-                            myCommand.Parameters.AddWithValue("Fname", pt.firstname);
-                            myCommand.Parameters.AddWithValue("Mname", pt.middlename);
-                            myCommand.Parameters.AddWithValue("Lname", pt.lastname);
-                            myCommand.Parameters.AddWithValue("Dob", pt.dob);
-                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id);
+                            myCommand.Parameters.AddWithValue("Fname", pt.firstname == null || pt.firstname == "" ? throw new NoNullAllowedException() : pt.firstname);
+                            myCommand.Parameters.AddWithValue("Mname", pt.middlename == null || pt.middlename == "" ? DBNull.Value : pt.middlename);
+                            myCommand.Parameters.AddWithValue("Lname", pt.lastname == null || pt.lastname == "" ? throw new NoNullAllowedException() : pt.lastname);
+                            myCommand.Parameters.AddWithValue("Dob", pt.dob == null || pt.dob.ToString() == "" ? DBNull.Value : pt.dob);
+                            myCommand.Parameters.AddWithValue("Gender", pt.gender_id == null || pt.gender_id == 0 ? throw new NoNullAllowedException() : pt.gender_id);
                             myReader = myCommand.ExecuteReader();
                             myReader.Read();
                             response_id = (int)myReader[0];

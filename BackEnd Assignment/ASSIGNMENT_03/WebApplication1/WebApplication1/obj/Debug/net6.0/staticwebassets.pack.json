@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment-02_SS1.png",
+      "PackagePath": "staticwebassets\\Screenshot\\Assignment-02_SS1.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment-02_SS2.png",
+      "PackagePath": "staticwebassets\\Screenshot\\Assignment-02_SS2.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment-02_SS3.png",
+      "PackagePath": "staticwebassets\\Screenshot\\Assignment-02_SS3.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment1.png",
+      "PackagePath": "staticwebassets\\Screenshot\\Assignment1.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment1_day2.png",
+      "PackagePath": "staticwebassets\\Screenshot\\Assignment1_day2.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\image\\avatar.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\avatar.jpg"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\image\\avatar2.png",
+      "PackagePath": "staticwebassets\\assets\\image\\avatar2.png"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\media.js",
+      "PackagePath": "staticwebassets\\assets\\js\\media.js"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WebApplication1.props",
+      "PackagePath": "build\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplication1.props",
+      "PackagePath": "buildMultiTargeting\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WebApplication1.props",
+      "PackagePath": "buildTransitive\\WebApplication1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
