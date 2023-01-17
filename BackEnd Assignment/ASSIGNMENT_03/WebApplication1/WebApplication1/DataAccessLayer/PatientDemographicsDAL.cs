@@ -18,7 +18,7 @@ namespace WebApplication1.DataAccessLayer
         /// </summary>
         /// <param name="id"></param>
         /// <returns>returns patient record in model format</returns>
-        public Task<PatientDemographicsModelList> Get(int id)
+        public async Task<dynamic> Get(int id)
         {
             PatientDemographicsModelList PatientData = new PatientDemographicsModelList
             {
@@ -44,21 +44,21 @@ namespace WebApplication1.DataAccessLayer
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
 
-                        for (int i = 0; i < table.Rows.Count; i++)
+                        if(table.Rows.Count == 0) {
+                            return await Task.FromResult(-1);
+                        }
+                        DataRow dr = table.Rows[0];
+                        PatientData.PatientDemographics.Add(
+                        new PatientDemographicsModelResponse
                         {
-                            DataRow dr = table.Rows[i];
-                            PatientData.PatientDemographics.Add(
-                                new PatientDemographicsModelResponse
-                                {
                                     chartnumber = dr["chartnumber"].ToString(),
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
                                     dob = dr["dob"] == DBNull.Value ? null : DateTime.Parse(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
-                                }
-                                );
-                        }
+                         });
+
                         myReader.Close();
                         myCon.Close();
 
@@ -69,7 +69,7 @@ namespace WebApplication1.DataAccessLayer
             {
                 Console.WriteLine(ex.Message);
             }
-            return Task.FromResult(PatientData);
+            return await Task.FromResult(PatientData);
         }
 
         /// <summary>

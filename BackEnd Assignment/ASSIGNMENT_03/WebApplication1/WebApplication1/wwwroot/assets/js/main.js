@@ -1,29 +1,39 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
+const form = document.getElementById('patient-info-form');
+const resetBtn = document.getElementById('resetbtn');
+const userdob = document.getElementById('dob');
+var age;
+form.addEventListener('submit', saveFormData);
+resetBtn.addEventListener('click', resetFormData);
+userdob.addEventListener('change',getAge);
+
+// Function is returns patient's data if patient id provided in URL.
 window.onload = function(){
     if(id != null){
         fetch(`http://localhost:5213/api/PatientDemographics/id=${id}`)
         .then(res => res.json())
         .then(data => {
-        document.getElementById("fname").value = data.PatientDemographics[0].firstname;
-        document.getElementById("patientid").innerHTML = data.PatientDemographics[0].chartnumber;
-        document.getElementById("lname").value = data.PatientDemographics[0].lastname;
-        document.getElementById("mname").value = data.PatientDemographics[0].middlename;
-        document.getElementById("sex").value = data.PatientDemographics[0].gender_id;
-        if (data.PatientDemographics[0].dob != null){
-            document.getElementById("dob").value = data.PatientDemographics[0].dob.split("T")[0];
-            const userdob = document.getElementById('dob');
-            var dob = new Date(userdob.value);
-            var nowdate = new Date();
-            age = nowdate.getFullYear() - dob.getFullYear();
-            document.getElementById('age').innerHTML = `${age}Y`;
-        } 
+        // Here we are checking that patient data is available or not means if -1 value return then data are not present.
+        if(data != -1){
+            document.getElementById("fname").value = data.PatientDemographics[0].firstname;
+            document.getElementById("patientid").innerHTML = data.PatientDemographics[0].chartnumber;
+            document.getElementById("lname").value = data.PatientDemographics[0].lastname;
+            document.getElementById("mname").value = data.PatientDemographics[0].middlename;
+            document.getElementById("sex").value = data.PatientDemographics[0].gender_id;
+            if (data.PatientDemographics[0].dob != null){
+                document.getElementById("dob").value = data.PatientDemographics[0].dob.split("T")[0];
+                getAge();
+            }
+        }
+        else{
+            alert("Patient doesn't found!");
+        }
     })
     }
 }
 
-
-
+// Function is used for create new patient if id not available in URL, and if id is available then update the patient data.
 function insertUpdateData(){
     if(id != null){
         fetch(`http://localhost:5213/api/PatientDemographics/id=${id}`, {
@@ -79,17 +89,78 @@ function insertUpdateData(){
     }
 }
 
+// This function is used for add shadow to form buttons at time of scroll event.
+const form_scroll = document.querySelector('.patient-form-container');
+form_scroll.addEventListener('scroll', (event) => {
+    let scroll = form_scroll.scrollTop;
+    if (scroll == 0) {
+        document.querySelector('.form-buttons-section').style.boxShadow = "none";
+    } else{
+        document.querySelector('.form-buttons-section').style.boxShadow = "0px 4px 5px rgb(162 165 169 / 25%)";
+    }
+});
 
+// This function is used for find age from the birthdate field.
+function getAge(){
+    var dob = new Date(userdob.value);
+    var nowdate = new Date();
+    age = nowdate.getFullYear() - dob.getFullYear();
+    document.getElementById('age').innerHTML = `${age}Y`;
+}
 
+// This function is called when save button click means form submit event occurs.
+function saveFormData(event) {
+    
+    event.preventDefault();
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+    const sex = document.getElementById('sex').value;
 
+    if(fname != ""){
+        document.getElementById('require-fname').innerHTML = '';
+        if(lname != ""){
+            document.getElementById('require-lname').innerHTML = '';
+            if(sex != ""){
+                document.getElementById('require-sex').innerHTML = '';
+                if(age > 18){
+                    const myFormData = new FormData(event.target);
+                    const formDataObj = {};
+                    myFormData.forEach((value, key) => (formDataObj[key] = value));
+                    console.log(formDataObj);
 
+                    // Function is used for create new patient if id not available in URL and if id is available then update the patient data.
+                    insertUpdateData();
+                }
+                else{
+                    alert('Please Fillup The Contact Form');
+                }
+            }
+            else{
+                document.getElementById('require-sex').innerHTML = 'Please Enter Sex';
+            }
+        }
+        else{
+            document.getElementById('require-lname').innerHTML = 'Please Enter Last Name';
+        }
+    }
+    else{
+        document.getElementById('require-fname').innerHTML = 'Please Enter First Name';
+    }
+    
+}
 
-const form = document.getElementById('patient-info-form');
-const resetBtn = document.getElementById('resetbtn');
-// const formcontainer = document.getElementsByClassName('patient-form-container');
-form.addEventListener('submit', saveFormData);
-resetBtn.addEventListener('click', resetFormData);
-// formcontainer.addEventListener('scroll', addshadow);
+// This function reset the field of form.
+function resetFormData(){
+    if(confirm('Are you sure, You want reset form ?')){
+        document.getElementById('require-sex').innerHTML = '';
+        document.getElementById('require-lname').innerHTML = '';
+        document.getElementById('require-fname').innerHTML = '';
+        form.reset();
+    }
+    location.reload();
+}
+
+// This function is used for add contact detail part like add home contact address or work contact address.
 const contactFormDetailHTML = `<div class="contact-detail-form">
                                                         <fieldset>
                                                             <legend><select name="" id="" class="select-option" style="width: 10rem;">
@@ -285,117 +356,9 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                             </div>
                                                         </fieldset>
                                                     </div>`;
-const userdob = document.getElementById('dob');
-var age;
-userdob.addEventListener('change',getAge);
-
-const form_scroll = document.querySelector('.patient-form-container');
-form_scroll.addEventListener('scroll', (event) => {
-    let scroll = form_scroll.scrollTop;
-    if (scroll == 0) {
-        document.querySelector('.form-buttons-section').style.boxShadow = "none";
-    } else{
-        document.querySelector('.form-buttons-section').style.boxShadow = "0px 4px 5px rgb(162 165 169 / 25%)";
-    }
-});
-
-function getAge(){
-    var dob = new Date(userdob.value);
-    var nowdate = new Date();
-    age = nowdate.getFullYear() - dob.getFullYear();
-    document.getElementById('age').innerHTML = `${age}Y`;
-
-}
-function saveFormData(event) {
-    
-    event.preventDefault();
-    const fname = document.getElementById('fname').value;
-    const lname = document.getElementById('lname').value;
-    const sex = document.getElementById('sex').value;
-
-    if(fname != ""){
-        document.getElementById('require-fname').innerHTML = '';
-        if(lname != ""){
-            document.getElementById('require-lname').innerHTML = '';
-            if(sex != ""){
-                document.getElementById('require-sex').innerHTML = '';
-                if(age > 18){
-                    const myFormData = new FormData(event.target);
-                    const formDataObj = {};
-                    myFormData.forEach((value, key) => (formDataObj[key] = value));
-                    console.log(formDataObj);
-                    insertUpdateData();
-                    // console.log(myFormData);
-                }
-                else{
-                    alert('Please Fillup The Contact Form');
-                }
-            }
-            else{
-                document.getElementById('require-sex').innerHTML = 'Please Enter Sex';
-            }
-        }
-        else{
-            document.getElementById('require-lname').innerHTML = 'Please Enter Last Name';
-        }
-    }
-    else{
-        document.getElementById('require-fname').innerHTML = 'Please Enter First Name';
-    }
-    
-}
-
-function resetFormData(){
-    if(confirm('Are you sure, You want reset form ?')){
-        document.getElementById('require-sex').innerHTML = '';
-        document.getElementById('require-lname').innerHTML = '';
-        document.getElementById('require-fname').innerHTML = '';
-        form.reset();
-    }
-}
-
 function addContactDetailFrom(){
  
     document.getElementById('contact-detail-form').insertAdjacentHTML('beforeend', contactFormDetailHTML);
-}
-
-function removeContactForm(deleteBtn){
-    deleteBtn.closest('.contact-detail-form').remove();
-}
-
-function closeSideMenu(){
-    const sidemenuclosebtn = document.getElementById('side-menu-close-btn').classList;
-    const leftsidenav = document.getElementById('leftsidenav');
-    if(sidemenuclosebtn.contains('fa-angle-left')){
-        sidemenuclosebtn.remove('fa-angle-left');
-        sidemenuclosebtn.add('fa-angle-right');
-        leftsidenav.style.width = "1%";
-    }
-    else
-    {
-        sidemenuclosebtn.remove('fa-angle-right');
-        sidemenuclosebtn.add('fa-angle-left');
-        leftsidenav.style.width = "13%";
-    }
-    
-}
-
-function openOtherInfoForm(){
-    const otherformopenbtn = document.getElementById('other-info-btn').classList;
-    const patientotherinfo = document.getElementById('patient-other-info-form');
-    if(otherformopenbtn.contains('fa-circle-chevron-down')){
-        otherformopenbtn.remove('fa-circle-chevron-down');
-        otherformopenbtn.add('fa-circle-chevron-right');
-        // patientotherinfo.style.transition = "height 1s";
-        patientotherinfo.style.height = "3.5rem";
-    }
-    else
-    {
-        otherformopenbtn.remove('fa-circle-chevron-right');
-        otherformopenbtn.add('fa-circle-chevron-down');
-        // patientotherinfo.style.transition = "height 1s";
-        patientotherinfo.style.height = "100%";
-    }
 }
 
 function addAddressField(addaddressbtn){
@@ -596,4 +559,46 @@ function addWebsiteField(addemailfieldbtn){
 }
 function removeWebsiteField(removeemailfieldbtn){
     removeemailfieldbtn.closest('.single-website').remove();
+}
+
+// This fuction remove the contact detail part.
+function removeContactForm(deleteBtn){
+    deleteBtn.closest('.contact-detail-form').remove();
+}
+
+// This function is used for open or close the side menu.
+function closeSideMenu(){
+    const sidemenuclosebtn = document.getElementById('side-menu-close-btn').classList;
+    const leftsidenav = document.getElementById('leftsidenav');
+    if(sidemenuclosebtn.contains('fa-angle-left')){
+        sidemenuclosebtn.remove('fa-angle-left');
+        sidemenuclosebtn.add('fa-angle-right');
+        leftsidenav.style.width = "1%";
+    }
+    else
+    {
+        sidemenuclosebtn.remove('fa-angle-right');
+        sidemenuclosebtn.add('fa-angle-left');
+        leftsidenav.style.width = "13%";
+    }
+    
+}
+
+// This function is used for open the other information part.
+function openOtherInfoForm(){
+    const otherformopenbtn = document.getElementById('other-info-btn').classList;
+    const patientotherinfo = document.getElementById('patient-other-info-form');
+    if(otherformopenbtn.contains('fa-circle-chevron-down')){
+        otherformopenbtn.remove('fa-circle-chevron-down');
+        otherformopenbtn.add('fa-circle-chevron-right');
+        // patientotherinfo.style.transition = "height 1s";
+        patientotherinfo.style.height = "3.5rem";
+    }
+    else
+    {
+        otherformopenbtn.remove('fa-circle-chevron-right');
+        otherformopenbtn.add('fa-circle-chevron-down');
+        // patientotherinfo.style.transition = "height 1s";
+        patientotherinfo.style.height = "100%";
+    }
 }

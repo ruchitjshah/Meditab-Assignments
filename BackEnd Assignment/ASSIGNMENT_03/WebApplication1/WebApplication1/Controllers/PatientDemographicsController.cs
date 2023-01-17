@@ -23,21 +23,13 @@ namespace WebApplication1.Controllers
         }
 
 
-        [HttpGet("index")]
-        public ContentResult ConfirmVerify()
-        {
-            var html = System.IO.File.ReadAllText(@"./HTMLFiles/home.html");
-            return base.Content(html, "text/html");
-        }
-
-
         /// <summary>
         /// This method returns the patient record by the id that will passed in get method
         /// </summary>
         /// <param name="id"></param>
         /// <returns>returns patient record in model format</returns>
         [HttpGet("id={id}")]
-        public async Task<PatientDemographicsModelList> Get(int id)
+        public async Task<dynamic> Get(int id)
         {
             return await _patientDemographicsSL.Get(id);
         }

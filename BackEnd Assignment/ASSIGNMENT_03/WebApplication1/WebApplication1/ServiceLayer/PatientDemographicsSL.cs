@@ -17,7 +17,7 @@ namespace WebApplication1.ServiceLayer
             return await _patientDemographicsDAL.DeleteUser(id);
         }
 
-        public async Task<PatientDemographicsModelList> Get(int id)
+        public async Task<dynamic> Get(int id)
         {
             return await _patientDemographicsDAL.Get(id);
         }
