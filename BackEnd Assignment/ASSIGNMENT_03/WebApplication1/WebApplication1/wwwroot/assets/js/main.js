@@ -9,7 +9,7 @@ resetBtn.addEventListener('click', resetFormData);
 userdob.addEventListener('change',getAge);
 
 // Function is returns patient's data if patient id provided in URL.
-window.onload = function(){
+function getDataById(){
     if(id != null){
         fetch(`http://localhost:5213/api/PatientDemographics/id=${id}`)
         .then(res => res.json())
@@ -32,6 +32,7 @@ window.onload = function(){
     })
     }
 }
+window.onload = getDataById();
 
 // Function is used for create new patient if id not available in URL, and if id is available then update the patient data.
 function insertUpdateData(){
@@ -157,7 +158,7 @@ function resetFormData(){
         document.getElementById('require-fname').innerHTML = '';
         form.reset();
     }
-    location.reload();
+    getDataById();
 }
 
 // This function is used for add contact detail part like add home contact address or work contact address.
