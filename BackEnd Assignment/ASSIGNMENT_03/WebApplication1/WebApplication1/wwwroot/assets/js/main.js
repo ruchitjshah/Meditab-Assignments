@@ -28,6 +28,7 @@ function getDataById(){
         }
         else{
             alert("Patient doesn't found!");
+            location.replace((window.location.href).split("?")[0]);
         }
     })
     }
@@ -162,7 +163,8 @@ function resetFormData(){
 }
 
 // This function is used for add contact detail part like add home contact address or work contact address.
-const contactFormDetailHTML = `<div class="contact-detail-form">
+function addContactDetailFrom(){
+    const contactFormDetailHTML = `<div class="contact-detail-form">
                                                         <fieldset>
                                                             <legend><select name="" id="" class="select-option" style="width: 10rem;">
                                                                     <option value="" selected>Home</option>
@@ -357,74 +359,74 @@ const contactFormDetailHTML = `<div class="contact-detail-form">
                                                             </div>
                                                         </fieldset>
                                                     </div>`;
-function addContactDetailFrom(){
- 
     document.getElementById('contact-detail-form').insertAdjacentHTML('beforeend', contactFormDetailHTML);
 }
 
 function addAddressField(addaddressbtn){
-    const addressFieldstr = `<div class="street-field" style="width: 66%;">
-                                                                        <div>
-                                                                            <label for="">Street</label>
-                                                                        </div>
-                                                                        <div>
-                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="address-field d-flex">
-                                                                        <div class="w-100 margin-tbr">
+    const addressFieldstr = `<div id="address-field">
+                                                                        <div class="street-field" style="width: 66%;">
                                                                             <div>
-                                                                                <label for="">Zip</label>
-                                                                            </div>
-                                                                            <div class="">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="w-100 margin-tbr">
-                                                                            <div>
-                                                                                <label for="">City</label>
+                                                                                <label for="">Street</label>
                                                                             </div>
                                                                             <div>
                                                                                 <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="margin-tbr">
-                                                                            <div>
-                                                                                <label for="">State</label>
+                                                                        <div class="address-field d-flex">
+                                                                            <div class="margin-tbr" style="width: 25%;">
+                                                                                <div>
+                                                                                    <label for="">Zip</label>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                                </div>
                                                                             </div>
-                                                                            <div>
-                                                                                <select name="" id="" class="select-option" style="width: 5rem;">
-                                                                                    <option value="">Washington</option>
-                                                                                    <option value="">Alabama</option>
-                                                                                    <option value="">Alaska</option>
-                                                                                    <option value="">Arizona</option>
-                                                                                </select>
+                                                                            <div class="margin-tbr" style="width: 25%;">
+                                                                                <div>
+                                                                                    <label for="">City</label>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="margin-tbr">
-                                                                            <div>
-                                                                                <label for="">Country</label>
+                                                                            <div class="margin-tbr" style="width: 20%;">
+                                                                                <div>
+                                                                                    <label for="">State</label>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <select name="" id="" class="select-option">
+                                                                                        <option value="">Washington</option>
+                                                                                        <option value="">Alabama</option>
+                                                                                        <option value="">Alaska</option>
+                                                                                        <option value="">Arizona</option>
+                                                                                    </select>
+                                                                                </div>
                                                                             </div>
-                                                                            <div>
-                                                                                <select name="" id="" class="select-option" style="width: 5rem;">
-                                                                                    <option value="">US</option>
-                                                                                    <option value="">India</option>
-                                                                                    <option value="">Australia</option>
-                                                                                    <option value="">US</option>
-                                                                                </select>
+                                                                            <div class="margin-tbr" style="width: 20%;">
+                                                                                <div>
+                                                                                    <label for="">Country</label>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <select name="" id="" class="select-option">
+                                                                                        <option value="">US</option>
+                                                                                        <option value="">India</option>
+                                                                                        <option value="">Australia</option>
+                                                                                        <option value="">US</option>
+                                                                                    </select>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="margin-tbr">
-                                                                            <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
+                                                                            <div class="margin-tbr" style="width: 10%;">
+                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
+                                                                            </div>
                                                                         </div>
                                                                     </div>`;
-    addaddressbtn.closest('.contact-container').querySelector('#address-field').insertAdjacentHTML('beforeend', addressFieldstr);
+    addaddressbtn.closest('.contact-container').querySelector('.address-section').insertAdjacentHTML('beforeend', addressFieldstr);
     document.getElementById('add-address-btn').style.display = 'none';
 }
 
 function removeAddressField(removeaddressbtn){
     removeaddressbtn.closest('.contact-container').querySelector('#add-address-btn').style.display = 'inline-block';
-    removeaddressbtn.closest('#address-field').innerHTML = '';
+    removeaddressbtn.closest('#address-field').remove();
 }
 
 function addPhoneField(addphonebtn){
