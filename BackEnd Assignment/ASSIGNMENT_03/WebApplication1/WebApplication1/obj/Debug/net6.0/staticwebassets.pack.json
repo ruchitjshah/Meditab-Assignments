@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\assets\\image\\avatar2.png"
     },
     {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\image\\patientimg.png",
+      "PackagePath": "staticwebassets\\assets\\image\\patientimg.png"
+    },
+    {
       "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },

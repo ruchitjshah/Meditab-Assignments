@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Npgsql;
 using System.Data;
 using System.Transactions;
@@ -11,6 +12,21 @@ namespace WebApplication1.DataAccessLayer
         private readonly IConfiguration _configuration; 
         public PatientDemographicsDAL(IConfiguration configuration) {
             _configuration = configuration;
+        }
+
+        public object nullCheck(int? val)
+        {
+            return val == null ? DBNull.Value : val;
+        }
+
+        public object nullCheck(string? val)
+        {
+            return val == null || val == "" ? DBNull.Value : val;
+        }
+
+        public object nullCheck(DateTime? val)
+        {
+            return val == null ? DBNull.Value : val;
         }
 
         /// <summary>
@@ -82,12 +98,12 @@ namespace WebApplication1.DataAccessLayer
             PatientDemographicsModelList PatientData = new PatientDemographicsModelList
             {
                 PatientDemographics = new List<PatientDemographicsModelResponse>()
-        };
+            };
                 
             try
             {
                 string query = @"
-                select * from patientget(pid => @Id, fname => @Firstname, lname => @Lastname, fgender => @Gender_id, fdob => @Dob, orderby_value => @Orderby, pagenumber => @Pagenumber, pagesize => @Pagesize)
+                select * from patientget(pid => @Id, fname => @Firstname, lname => @Lastname, fgender => @Gender_id, fdob => @Dob, orderby_value => @Orderby, pagenumber => @Pagenumber, pagesize => @Pagesize, sort_method => @Sortmethod)
             ";
 
                 DataTable table = new DataTable();
@@ -98,14 +114,15 @@ namespace WebApplication1.DataAccessLayer
                     myCon.Open();
                     using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                     {
-                        myCommand.Parameters.AddWithValue("Id", request.patient_id == null ? DBNull.Value : request.patient_id);
-                        myCommand.Parameters.AddWithValue("Firstname", request.firstname == null || request.firstname == "" ? DBNull.Value : request.firstname);
-                        myCommand.Parameters.AddWithValue("Lastname", request.lastname == null || request.lastname == "" ? DBNull.Value : request.lastname);
-                        myCommand.Parameters.AddWithValue("Dob", request.dob == null ? DBNull.Value : request.dob);
-                        myCommand.Parameters.AddWithValue("Gender_id", request.gender_id == null ? DBNull.Value : request.gender_id);
-                        myCommand.Parameters.AddWithValue("Pagenumber", request.pagenumber == null ? DBNull.Value : request.pagenumber);
-                        myCommand.Parameters.AddWithValue("Pagesize", request.pagesize == null ? DBNull.Value : request.pagesize);
-                        myCommand.Parameters.AddWithValue("Orderby", request.orderby == null || request.orderby == "" ? DBNull.Value : request.orderby);
+                        myCommand.Parameters.AddWithValue("Id", nullCheck(request.patient_id));
+                        myCommand.Parameters.AddWithValue("Firstname", nullCheck(request.firstname));
+                        myCommand.Parameters.AddWithValue("Lastname", nullCheck(request.lastname));
+                        myCommand.Parameters.AddWithValue("Dob", nullCheck(request.dob));
+                        myCommand.Parameters.AddWithValue("Gender_id", nullCheck(request.gender_id));
+                        myCommand.Parameters.AddWithValue("Pagenumber", nullCheck(request.pagenumber));
+                        myCommand.Parameters.AddWithValue("Pagesize", nullCheck(request.pagesize));
+                        myCommand.Parameters.AddWithValue("Orderby", nullCheck(request.orderby));
+                        myCommand.Parameters.AddWithValue("Sortmethod", nullCheck(request.sortmethod));
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
 
@@ -115,6 +132,7 @@ namespace WebApplication1.DataAccessLayer
                             PatientData.PatientDemographics.Add(
                                 new PatientDemographicsModelResponse
                                 {
+                                    chartnumber = dr["chartnumber"].ToString(),
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
@@ -135,6 +153,7 @@ namespace WebApplication1.DataAccessLayer
             }
             return Task.FromResult(PatientData);
         }
+
 
         /// <summary>
         /// This method is used for create/insert data of patient

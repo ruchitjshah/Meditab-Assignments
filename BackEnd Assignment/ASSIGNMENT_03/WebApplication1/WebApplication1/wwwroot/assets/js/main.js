@@ -1,6 +1,9 @@
+const apiURL = 'http://localhost:5213/api/PatientDemographics';
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
+const form_scroll = document.querySelector('.patient-form-container');
 const form = document.getElementById('patient-info-form');
+const previewImage = document.getElementById('patient-image');
 const resetBtn = document.getElementById('resetbtn');
 const userdob = document.getElementById('dob');
 var age;
@@ -10,14 +13,14 @@ userdob.addEventListener('change',getAge);
 
 // Function is returns patient's data if patient id provided in URL.
 function getDataById(){
-    if(id != null){
-        fetch(`http://localhost:5213/api/PatientDemographics/id=${id}`)
+    if(id != null && id != 0){
+        fetch(`${apiURL}/id=${id}`)
         .then(res => res.json())
         .then(data => {
         // Here we are checking that patient data is available or not means if -1 value return then data are not present.
         if(data != -1){
             document.getElementById("fname").value = data.PatientDemographics[0].firstname;
-            document.getElementById("patientid").innerHTML = data.PatientDemographics[0].chartnumber;
+            document.getElementById("patientid").textContent = data.PatientDemographics[0].chartnumber;
             document.getElementById("lname").value = data.PatientDemographics[0].lastname;
             document.getElementById("mname").value = data.PatientDemographics[0].middlename;
             document.getElementById("sex").value = data.PatientDemographics[0].gender_id;
@@ -29,6 +32,7 @@ function getDataById(){
         else{
             alert("Patient doesn't found!");
             location.replace((window.location.href).split("?")[0]);
+            
         }
     })
     }
@@ -37,19 +41,21 @@ window.onload = getDataById();
 
 // Function is used for create new patient if id not available in URL, and if id is available then update the patient data.
 function insertUpdateData(){
-    if(id != null){
-        fetch(`http://localhost:5213/api/PatientDemographics/id=${id}`, {
-        method: 'PUT',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({
+    var patientData = {
             firstname: document.getElementById('fname').value,
             lastname: document.getElementById('lname').value,
             middlename: document.getElementById('mname').value,
             gender_id: document.getElementById('sex').value,
             dob: document.getElementById('dob').value
-        })
+        };
+
+    if(id != null){
+        fetch(`${apiURL}/id=${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(patientData)
 
         })
         .then(res => res.json())
@@ -64,24 +70,19 @@ function insertUpdateData(){
         .catch(error => console.log('error'))
     }
     else{
-        fetch(`http://localhost:5213/api/PatientDemographics`, {
+        fetch(apiURL, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify({
-            firstname: document.getElementById('fname').value,
-            lastname: document.getElementById('lname').value,
-            middlename: document.getElementById('mname').value,
-            gender_id: document.getElementById('sex').value,
-            dob: document.getElementById('dob').value
-        })
+        body: JSON.stringify(patientData)
 
         })
         .then(res => res.json())
         .then(data => {
             if(data){
                 alert(`Patient ID:${data} Created Successfully`);
+                window.location.replace(`${window.location}?id=${data}`);
             }
             else{
                 alert(`Patient Doesn't Created Successfully`);
@@ -92,7 +93,6 @@ function insertUpdateData(){
 }
 
 // This function is used for add shadow to form buttons at time of scroll event.
-const form_scroll = document.querySelector('.patient-form-container');
 form_scroll.addEventListener('scroll', (event) => {
     let scroll = form_scroll.scrollTop;
     if (scroll == 0) {
@@ -102,12 +102,21 @@ form_scroll.addEventListener('scroll', (event) => {
     }
 });
 
+// This function is used to preview the while uploading new patient impage.
+previewImage.onchange = eventt => {
+    const [file] = previewImage.files;
+    if (file){
+        var imgTag = document.getElementById('patient-image-tag');
+        imgTag.src = URL.createObjectURL(file);
+    }
+}
+
 // This function is used for find age from the birthdate field.
 function getAge(){
     var dob = new Date(userdob.value);
     var nowdate = new Date();
     age = nowdate.getFullYear() - dob.getFullYear();
-    document.getElementById('age').innerHTML = `${age}Y`;
+    document.getElementById('age').textContent = `${age}Y`;
 }
 
 // This function is called when save button click means form submit event occurs.
@@ -157,6 +166,8 @@ function resetFormData(){
         document.getElementById('require-sex').innerHTML = '';
         document.getElementById('require-lname').innerHTML = '';
         document.getElementById('require-fname').innerHTML = '';
+        var imgTag = document.getElementById('patient-image-tag');
+        imgTag.src = './assets/image/patientimg.png';
         form.reset();
     }
     getDataById();
@@ -421,7 +432,7 @@ function addAddressField(addaddressbtn){
                                                                         </div>
                                                                     </div>`;
     addaddressbtn.closest('.contact-container').querySelector('.address-section').insertAdjacentHTML('beforeend', addressFieldstr);
-    document.getElementById('add-address-btn').style.display = 'none';
+    addaddressbtn.closest('.contact-container').querySelector('#add-address-btn').style.display = 'none';
 }
 
 function removeAddressField(removeaddressbtn){

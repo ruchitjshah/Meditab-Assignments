@@ -331,13 +331,56 @@ input:checked{
     position: relative;
     z-index: 1;
 }
+.patient-image-section{
+    cursor: pointer;
+    position: relative;
+    width: 8rem;
+    margin-bottom: 0.5rem;
+
+}
+.cancel-iamge-btn{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.3rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.cancel-iamge-btn:hover{
+    background-color: rgba(255, 255, 255, 0.49);
+}
+.patient-image-section label{
+    display: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 8rem;
+    padding: 0.3em;
+    /* opacity: 50%; */
+    color: var(--navanar-backgroung);
+    background-color: rgba(0, 0, 0, 0.502);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.patient-image-section:hover .patient-image{
+    opacity: 50%;
+}
+
+.patient-image-section:hover label, .patient-image-section:hover .cancel-iamge-btn{
+    display: block;
+}
 
 .patient-form-container .patient-image{
     border-radius: 1.5rem;
     width: 8rem;
     height: 8rem;
     box-shadow: 0 2px 4px rgb(0 0 0 / 24%), 0 4px 8px rgb(0 0 0 / 12%);
-    margin-bottom: 0.5rem;
+    transition: 0.5s;
 }
 
 .patient-general-info,

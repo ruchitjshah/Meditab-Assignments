@@ -78,7 +78,7 @@
                 <section class="inside-header-section">
                     <div class="tabview-main">
                         <div class="tabview">
-                            <a href="#home">Patient Name</a>
+                            <a href="#home" id="tab">Patient Name</a>
                             <div style="float: right; padding: 0.5rem; font-size: 1.2rem;">
                                 <i class="fa-sharp fa-solid fa-circle-info"></i>
                             </div>
@@ -158,8 +158,13 @@
                                                         
                                                     </div>
                                                     <div class="d-flex d-flex-col left-align-item w-50">
-                                                        <img src="./assets/image/avatar.jpg" alt="Patient Image" class="patient-image">
-                                                        <label for="" style="width: 100%; font-size: 1.3rem; font-weight: 600" id="patientid"></label>
+                                                        <div class="patient-image-section" style="height: 8rem;">
+                                                            <img src="./assets/image/patientimg.png" alt="Patient Image" class="patient-image" id="patient-image-tag">
+                                                            <span class="cancel-iamge-btn"><i class="fa-solid fa-xmark"></i></span>
+                                                            <label for="patient-image"><i class="fa-solid fa-upload"></i></label>
+                                                            <input type="file" accept="image/*" id="patient-image" style="display: none;">
+                                                        </div>
+                                                        <span for="" style="width: 100%; font-size: 1.3rem; font-weight: 600" id="patientid">Chart#</span>
                                                     </div>
                                                 </div>
                                             </div>

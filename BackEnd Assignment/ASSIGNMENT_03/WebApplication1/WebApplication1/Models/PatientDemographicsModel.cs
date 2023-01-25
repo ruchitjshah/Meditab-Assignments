@@ -37,5 +37,7 @@
         public int? pagesize { get; set; } = null;
 
         public string? orderby { get; set; } = null;
+
+        public string? sortmethod { get; set; } = null;
     }
 }
