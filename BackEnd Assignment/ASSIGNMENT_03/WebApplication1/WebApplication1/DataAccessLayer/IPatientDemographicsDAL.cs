@@ -13,5 +13,7 @@ namespace WebApplication1.DataAccessLayer
         public Task<int> UpdateData(int id, PatientDemographicsModelResponse pt);
 
         public Task<string> DeleteUser(int id);
+
+        /*public Task<int> UploadImage(IFormFile files);*/
     }
 }

@@ -8,17 +8,16 @@ using WebApplication1.ServiceLayer;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+
 namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class PatientDemographicsController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
         private readonly IPatientDemographicsSL _patientDemographicsSL;
-        public PatientDemographicsController(IConfiguration configuration, IPatientDemographicsSL patientDemographicsSL)
+        public PatientDemographicsController(IPatientDemographicsSL patientDemographicsSL)
         {
-            _configuration = configuration;
             _patientDemographicsSL = patientDemographicsSL;
         }
 
@@ -67,6 +66,19 @@ namespace WebApplication1.Controllers
         {
                 return await _patientDemographicsSL.UpdateData(id, pt);
         }
+
+        
+        /// <summary>
+        /// This Method is used for upload image.
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns></returns>
+        [HttpPut("uploadimage")]
+        public async Task<int> UploadImage([FromForm] PatientDemographicsModelImageUpload files)
+        {
+            return await _patientDemographicsSL.UploadImage(files);
+        }
+
 
         /// <summary>
         /// This method is used for soft delete the user

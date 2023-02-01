@@ -343,13 +343,13 @@ input:checked{
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0.3rem;
-    padding: 0.4rem 0.6rem;
+    margin: 0.4rem;
+    padding: 0.1rem 0.4rem;
     border-radius: 50%;
     transition: 0.5s;
 }
 .cancel-iamge-btn:hover{
-    background-color: rgba(255, 255, 255, 0.49);
+    background-color: rgb(255, 255, 255);
 }
 .patient-image-section label{
     display: none;
@@ -374,7 +374,9 @@ input:checked{
 .patient-image-section:hover label, .patient-image-section:hover .cancel-iamge-btn{
     display: block;
 }
-
+.patient-image-section label .fa-upload:hover{
+    transform: scale(1.1);
+}
 .patient-form-container .patient-image{
     border-radius: 1.5rem;
     width: 8rem;

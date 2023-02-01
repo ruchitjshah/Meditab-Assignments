@@ -13,5 +13,8 @@ namespace WebApplication1.ServiceLayer
         public Task<int> UpdateData(int id, PatientDemographicsModelResponse pt);
 
         public Task<string> DeleteUser(int id);
+
+       public Task<int> UploadImage(PatientDemographicsModelImageUpload files);
+
     }
 }

@@ -44,13 +44,11 @@
                 <a href=""><i class="fa-solid fa-chart-line"></i></a>
             </div>
             <!-- Left Side Portion -->
-            
-            
             <!-- Right Side Portion -->
             <div class="topnav-right">
                 <form action="#">
                     <input type="text" class="searchpatientbox" name="searchbox" id="searchpatient"
-                    placeholder="Search Patient">
+                           placeholder="Search Patient">
                 </form>
                 <a href=""><i class="fa-solid fa-calendar-week"></i></a>
                 <a href=""><i class="fa-solid fa-circle-question"></i></a>
@@ -64,10 +62,10 @@
                 <!-- Right Side Navbar -->
                 <aside class="rightnav">
                     <a href="#home"><i class="fa-solid fa-fax"></i><span>0</span></a>
-                    
+
                     <a href="#home"><i class="fa-solid fa-comment-dots"></i><span>0</span></a>
                     <a href="#home"><i class="fa-solid fa-envelope"></i><span>0</span></a>
-                    <a href="#home"><i class="fa-solid fa-bell"></i></i><span>0</span></a>
+                    <a href="#home"><i class="fa-solid fa-bell"></i><span>0</span></a>
                     <a href="#home"><i class="fa-solid fa-list-check"></i><span>0</span></a>
                     <a href="#home"><i class="fa-solid fa-calendar-plus"></i></a>
                     <a href="#home"><i class="fa-solid fa-note-sticky"></i></a>
@@ -84,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="patient-info-section">
                         <div class="patient-detail">
                             <a href="#home">Patient Bar</a>
@@ -94,8 +92,8 @@
                         </div>
                     </div>
                 </section>
-                
-                
+
+
                 <section class="main-section">
                     <!-- Left Side Navbar -->
                     <div class="leftsidenav" id="leftsidenav" style="padding: 0.5rem 0.2rem;">
@@ -133,18 +131,18 @@
                             <a href="">Ledger</a>
                         </div>
                     </div>
-                    
+
                     <div class="patient-main-container">
                         <div class="form-buttons-section">
-                            
-                                <div class="form-buttons" style="text-align: right; padding: 0.5rem; font-size: 1.2rem;">
-                                    <i class="fa-solid fa-square-check" style="color: #20b2aa; padding: 0 0.3rem 0 0;"></i><span style="font-size: 1rem;">Active</span>
-                                    <i class="fa-solid fa-ellipsis-vertical" style="padding: 0 1rem 0 1rem;"></i>
-                                    <button type="button" class="btn btn-secondary">Re-Verify</button>
-                                    <button type="button" id="resetbtn" class="btn btn-secondary">Cancel Changes</button>
-                                    <button type="submit" class="btn btn-primary" form="patient-info-form"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 0.3rem; color: orange;"></i>Save</button>
-                                </div>
-                
+
+                            <div class="form-buttons" style="text-align: right; padding: 0.5rem; font-size: 1.2rem;">
+                                <i class="fa-solid fa-square-check" style="color: #20b2aa; padding: 0 0.3rem 0 0;"></i><span style="font-size: 1rem;">Active</span>
+                                <i class="fa-solid fa-ellipsis-vertical" style="padding: 0 1rem 0 1rem;"></i>
+                                <button type="button" class="btn btn-secondary" onclick="uploadImage()">Re-Verify</button>
+                                <button type="button" id="resetbtn" class="btn btn-secondary">Cancel Changes</button>
+                                <button type="submit" class="btn btn-primary" form="patient-info-form"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 0.3rem; color: orange;"></i>Save</button>
+                            </div>
+
                         </div>
                         <div class="patient-form-container">
                             <div class="form-section">
@@ -155,20 +153,20 @@
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="left-align-item w-50">
-                                                        
+
                                                     </div>
                                                     <div class="d-flex d-flex-col left-align-item w-50">
                                                         <div class="patient-image-section" style="height: 8rem;">
                                                             <img src="./assets/image/patientimg.png" alt="Patient Image" class="patient-image" id="patient-image-tag">
                                                             <span class="cancel-iamge-btn"><i class="fa-solid fa-xmark"></i></span>
                                                             <label for="patient-image"><i class="fa-solid fa-upload"></i></label>
-                                                            <input type="file" accept="image/*" id="patient-image" style="display: none;">
+                                                            <input type="file" accept="image/*" id="patient-image" name="patient-image" style="display: none;">
                                                         </div>
                                                         <span for="" style="width: 100%; font-size: 1.3rem; font-weight: 600" id="patientid">Chart#</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -179,7 +177,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -191,7 +189,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -202,7 +200,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -224,7 +222,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="d-flex d-center w-100">
                                                 <div class="right-align-item w-50">
                                                     <label for="suffix">Suffix:</label>
@@ -233,7 +231,7 @@
                                                     <input type="text" class="input-tag" id="Suffix" name="Suffix" placeholder="">
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -244,10 +242,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="xl-side-33">
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -263,7 +261,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -275,7 +273,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -290,7 +288,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -301,7 +299,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
@@ -318,639 +316,656 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div>
                                                 <div class="d-flex d-center w-100">
                                                     <div class="right-align-item w-50">
                                                         <label for="risk">Risk:</label>
                                                     </div>
                                                     <div class="left-align-item w-50">
-                                                        <a href="#" style="text-decoration: none; color: #243b53; margin-left: 0.5rem;"><i
-                                                            class="fa-solid fa-circle-plus"></i>Add Risk</a>
-                                                        </div>
+                                                        <a href="#" style="text-decoration: none; color: #243b53; margin-left: 0.5rem;">
+                                                            <i class="fa-solid fa-circle-plus"></i>Add Risk
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="marital-status">Marital Status:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="marital-status" id="marital-status" class="select-option">
-                                                                <option value="">Married</option>
-                                                                <option value="">Never Married</option>
-                                                                <option value="">Divorced</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="marital-status">Marital Status:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="marital-status" id="marital-status" class="select-option">
+                                                            <option value="">Married</option>
+                                                            <option value="">Never Married</option>
+                                                            <option value="">Divorced</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="ssn">SSN:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <input type="text" class="input-tag" id="ssn" name="ssn" placeholder="">
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="ssn">SSN:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="text" class="input-tag" id="ssn" name="ssn" placeholder="">
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="race">Race:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="race" id="race" class="select-option">
-                                                                <option value="">White</option>
-                                                                <option value="">American Indian or Alaskan Native</option>
-                                                                <option value="">Asian</option>
-                                                                <option value="">Black or African American</option>
-                                                                <option value="">Black or African American</option>
-                                                                <option value="">Black or African American</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="race">Race:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="race" id="race" class="select-option">
+                                                            <option value="">White</option>
+                                                            <option value="">American Indian or Alaskan Native</option>
+                                                            <option value="">Asian</option>
+                                                            <option value="">Black or African American</option>
+                                                            <option value="">Black or African American</option>
+                                                            <option value="">Black or African American</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="ethnicity">Ethnicity:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="ethnicity" id="ethnicity" class="select-option">
-                                                                <option value="">Other Ethnicity</option>
-                                                                <option value="">Unreported/Refuced to report</option>
-                                                                <option value="">Hispanic/Latino</option>
-                                                                <option value="">Non-Hispanic/Latino</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="ethnicity">Ethnicity:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="ethnicity" id="ethnicity" class="select-option">
+                                                            <option value="">Other Ethnicity</option>
+                                                            <option value="">Unreported/Refuced to report</option>
+                                                            <option value="">Hispanic/Latino</option>
+                                                            <option value="">Non-Hispanic/Latino</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
+                                            </div>
+
                                         </div>
                                         <div class="xl-side-33">
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="self-pay">Self Pay:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <input type="checkbox" class="cursor-pointer"  id="self-pay" name="self-pay">
-                                                        </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="self-pay">Self Pay:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="checkbox" class="cursor-pointer" id="self-pay" name="self-pay">
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="default-facility">Default Facility:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="default-facility" id="default-facility" class="select-option">
-                                                                <option value="">(FAC8) Aviral Medical Group</option>
-                                                                <option value="">(FAC18) DBZ- Corporation Medical Group</option>
-                                                                <option value="">(FAC13) Facility hospital</option>
-                                                                <option value="">(FAC14) Facility hospital</option>
-                                                                <option value="">(FAC17) yhello Location</option>
-                                                                <option value="">(FACFRE) CMC Fresno Location</option>
-                                                                <option value="">(FAC9) Harshit Medical Group</option>
-                                                                <option value="">(FAC15) Shinchan nohara hospital</option>
-                                                                <option value="">(FAC1) MCG - Meditab Clinic Group Medical Group</option>
-                                                                <option value="">(FAC4) MCG Angrave</option>                                                                
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="default-facility">Default Facility:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="default-facility" id="default-facility" class="select-option">
+                                                            <option value="">(FAC8) Aviral Medical Group</option>
+                                                            <option value="">(FAC18) DBZ- Corporation Medical Group</option>
+                                                            <option value="">(FAC13) Facility hospital</option>
+                                                            <option value="">(FAC14) Facility hospital</option>
+                                                            <option value="">(FAC17) yhello Location</option>
+                                                            <option value="">(FACFRE) CMC Fresno Location</option>
+                                                            <option value="">(FAC9) Harshit Medical Group</option>
+                                                            <option value="">(FAC15) Shinchan nohara hospital</option>
+                                                            <option value="">(FAC1) MCG - Meditab Clinic Group Medical Group</option>
+                                                            <option value="">(FAC4) MCG Angrave</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="default-provider">Default Provider:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="default-provider" id="default-provider" class="select-option">
-                                                                <option value="">Agrawal, Sumit (Sumit A)</option>
-                                                                <option value="">Brown, Lawrence</option>
-                                                                <option value="">Button, Amy</option>
-                                                                <option value="">Chaudhary, Dhruvil</option>
-                                                                <option value="">Cooper, John</option>
-                                                                <option value="">D'costa, Robert</option>
-                                                                <option value="">Dela cruz, Judelyn</option>                                                            
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="default-provider">Default Provider:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="default-provider" id="default-provider" class="select-option">
+                                                            <option value="">Agrawal, Sumit (Sumit A)</option>
+                                                            <option value="">Brown, Lawrence</option>
+                                                            <option value="">Button, Amy</option>
+                                                            <option value="">Chaudhary, Dhruvil</option>
+                                                            <option value="">Cooper, John</option>
+                                                            <option value="">D'costa, Robert</option>
+                                                            <option value="">Dela cruz, Judelyn</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="timezone">Timezone:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="timezone" id="timezone" class="select-option">
-                                                                <option value="">(UTC-10:00) HAST - America/Adak</option>
-                                                                <option value="">(UTC-09:00) AKST - America/Anchorage</option>
-                                                                <option value="">(UTC-07:00) MST - America/Boise</option>
-                                                                <option value="">(UTC-06:00) CST - America/Chicago</option>
-                                                                <option value="">(UTC-07:00) MST - America/Denver</option>
-                                                                <option value="">(UTC-05:00) EST - America/Detroit</option>
-                                                                <option value="">(UTC-05:00) EST - America/Indiana/Indianapolis</option>
-                                                                <option value="">(UTC-06:00) CST - America/Indiana/Knox</option>
-                                                                <option value="">(UTC-05:00) EST - America/Indiana/Marengo</option>
-                                                                <option value="">(UTC-05:00) EST - America/Indiana</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="timezone">Timezone:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="timezone" id="timezone" class="select-option">
+                                                            <option value="">(UTC-10:00) HAST - America/Adak</option>
+                                                            <option value="">(UTC-09:00) AKST - America/Anchorage</option>
+                                                            <option value="">(UTC-07:00) MST - America/Boise</option>
+                                                            <option value="">(UTC-06:00) CST - America/Chicago</option>
+                                                            <option value="">(UTC-07:00) MST - America/Denver</option>
+                                                            <option value="">(UTC-05:00) EST - America/Detroit</option>
+                                                            <option value="">(UTC-05:00) EST - America/Indiana/Indianapolis</option>
+                                                            <option value="">(UTC-06:00) CST - America/Indiana/Knox</option>
+                                                            <option value="">(UTC-05:00) EST - America/Indiana/Marengo</option>
+                                                            <option value="">(UTC-05:00) EST - America/Indiana</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="default-pharmacy">Default Pharmacy:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="default-pharmacy" id="default-pharmacy" class="select-option">
-                                                                <option value="">#003 Eastway NY Test UAT (3352553)</option>
-                                                                <option value="">#004 Fairport NY Test UAT (3349467)</option>
-                                                                <option value="">#004 Fairport NY Test UAT (3349467)</option>
-                                                                <option value="">#014 Hunt Valley MD Test UAT (2132316)</option>
-                                                                <option value="">86 BOBO Pharmacy Inc (5831006)</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="default-pharmacy">Default Pharmacy:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="default-pharmacy" id="default-pharmacy" class="select-option">
+                                                            <option value="">#003 Eastway NY Test UAT (3352553)</option>
+                                                            <option value="">#004 Fairport NY Test UAT (3349467)</option>
+                                                            <option value="">#004 Fairport NY Test UAT (3349467)</option>
+                                                            <option value="">#014 Hunt Valley MD Test UAT (2132316)</option>
+                                                            <option value="">86 BOBO Pharmacy Inc (5831006)</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="current-rx-pharma">Use current pharmacy for all Rx:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <input type="checkbox" class="cursor-pointer" id="current-rx-pharma" name="current-rx-pharma" placeholder="">
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="current-rx-pharma">Use current pharmacy for all Rx:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="checkbox" class="cursor-pointer" id="current-rx-pharma" name="current-rx-pharma" placeholder="">
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="pcp-provider">PCP same as Provider:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <input type="checkbox" class="cursor-pointer" id="pcp-provider" name="pcp-provider" placeholder="">
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="pcp-provider">PCP same as Provider:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <input type="checkbox" class="cursor-pointer" id="pcp-provider" name="pcp-provider" placeholder="">
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="pcp">PCP:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="pcp" id="pcp" class="select-option">
-                                                                <option value="">Agrawal, Sumit (Sumit A)</option>
-                                                                <option value="">Brown, Lawrence</option>
-                                                                <option value="">Button, Amy</option>
-                                                                <option value="">Chaudhary, Dhruvil</option>
-                                                                <option value="">Cooper, John</option>
-                                                                <option value="">D'costa, Robert</option>
-                                                                <option value="">Dela cruz, Judelyn</option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="pcp">PCP:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="pcp" id="pcp" class="select-option">
+                                                            <option value="">Agrawal, Sumit (Sumit A)</option>
+                                                            <option value="">Brown, Lawrence</option>
+                                                            <option value="">Button, Amy</option>
+                                                            <option value="">Chaudhary, Dhruvil</option>
+                                                            <option value="">Cooper, John</option>
+                                                            <option value="">D'costa, Robert</option>
+                                                            <option value="">Dela cruz, Judelyn</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
-                                                <div>
-                                                    <div class="d-flex d-center w-100">
-                                                        <div class="right-align-item w-50">
-                                                            <label for="fee-schedule">Fee Schedule:</label>
-                                                        </div>
-                                                        <div class="left-align-item w-50">
-                                                            <select name="fee-schedule" id="fee-schedule" class="select-option" disabled style="cursor: no-drop;">
-                                                                <option value=""></option>
-                                                            </select>
-                                                        </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="fee-schedule">Fee Schedule:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="fee-schedule" id="fee-schedule" class="select-option" disabled style="cursor: no-drop;">
+                                                            <option value=""></option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                
+                                            </div>
+
                                         </div>
-                                    </div>    
+                                    </div>
 
                                     <div class="patient-contact-info">
-                                            <div class="contact-header">
-                                                <h2>Contact Details <i style="font-size: 1.2rem;" class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addContactDetailFrom()"></i></h2>
-                                                <span>Please set the preferences after adding the contact information, the section to set preference
-                                                    can
-                                                    be found below the
-                                                    contact section of the page.</span>
-                                                </div>
-                                                <div class="contact-detail-form-container w-100" id="contact-detail-form">
-                                                    <div class="contact-detail-form">
-                                                        <fieldset>
-                                                            <legend><select name="" id="" class="select-option" style="width: 10rem;">
-                                                                    <option value="" selected>Home</option>
-                                                                    <option value="" >Work</option>
-                                                                    <option value="">Other</option>
-                                                                </select></legend>
-                                                            <div class="contact-container">
-                                                                <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <div class="contact-header">
+                                            <h2>Contact Details <i style="font-size: 1.2rem;" class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addContactDetailFrom()"></i></h2>
+                                            <span>
+                                                Please set the preferences after adding the contact information, the section to set preference
+                                                can
+                                                be found below the
+                                                contact section of the page.
+                                            </span>
+                                        </div>
+                                        <div class="contact-detail-form-container w-100" id="contact-detail-form">
+                                            <div class="contact-detail-form">
+                                                <fieldset>
+                                                    <legend>
+                                                        <select name="" id="" class="select-option" style="width: 10rem;">
+                                                            <option value="" selected>Home</option>
+                                                            <option value="">Work</option>
+                                                            <option value="">Other</option>
+                                                        </select>
+                                                    </legend>
+                                                    <div class="contact-container">
+                                                        <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                                            <div>
+                                                                <span class="font-dark" style="font-weight: 700; font-size: 1rem;">
+                                                                    Address <i class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
+                                                                               onclick=" addAddressField(this)"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div class="right-align-item">
+                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="address-section">
+                                                            <div id="address-field">
+                                                                <div class="street-field" style="width: 66%;">
                                                                     <div>
-                                                                        <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
-                                                                                onclick=" addAddressField(this)"></i></span>
+                                                                        <label for="">Street</label>
                                                                     </div>
-                                                                    <div class="right-align-item">
-                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="address-section">
-                                                                    <div id="address-field">
-                                                                        <div class="street-field" style="width: 66%;">
-                                                                            <div>
-                                                                                <label for="">Street</label>
-                                                                            </div>
-                                                                            <div>
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <div>
+                                                                            <label for="">Zip</label>
                                                                         </div>
-                                                                        <div class="address-field d-flex">
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <div>
-                                                                                    <label for="">Zip</label>
-                                                                                </div>
-                                                                                <div class="">
-                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <div>
-                                                                                    <label for="">City</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <div>
-                                                                                    <label for="">State</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <select name="" id="" class="select-option">
-                                                                                        <option value="">Washington</option>
-                                                                                        <option value="">Alabama</option>
-                                                                                        <option value="">Alaska</option>
-                                                                                        <option value="">Arizona</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <div>
-                                                                                    <label for="">Country</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <select name="" id="" class="select-option">
-                                                                                        <option value="">US</option>
-                                                                                        <option value="">India</option>
-                                                                                        <option value="">Australia</option>
-                                                                                        <option value="">US</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 10%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
-                                                                            </div>
+                                                                        <div class="">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                    
-                                                                <div class="phone-form">
-                                                                    <span class="font-dark" style="font-weight: 700;">Phone <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i></span>
-                                                                    <div class="phone-field">
-                                                                        <div class="d-flex w-100 border-bottom phone-lable">
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Type</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Code</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 30%; padding-left: 0.2rem;">
-                                                                                <label for="">Number</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Ext.</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
-                                                                    
-                                                                            </div>
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <div>
+                                                                            <label for="">City</label>
                                                                         </div>
-                                                                        <div class="d-flex d-center phone-input">
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <select name="" id="" class="select-option">
-                                                                                    <option value="">Cell</option>
-                                                                                    <option value="">Landline</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <select name="" id="" class="select-option">
-                                                                                    <option value="">+1 United States</option>
-                                                                                    <option value="">+1 Puerto Rico</option>
-                                                                                    <option value="">+93 Afghanistan</option>
-                                                                                    <option value="">+355 Albania</option>
-                                                                                    <option value="">+213 Algeria</option>
-                                                                                    <option value="">+1 American Samoa</option>
-                                                                                    <option value="">+376 Andorra</option>
-                                                                                    <option value="">+244 Angola</option>
-                                                                                    <option value="">+1 Anguilla</option>
-                                                                                    <option value="">+672 Antarctica</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 30%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div style="width: 20%;">
-                                                                    
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
-                                                                            </div>
-                                                                    
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                
-                                                                
-                                                                <div class="fax-field" style="margin-top: 0.5rem;">
-                                                                    <label class="font-dark" for="" style="font-weight: 700;">Fax <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i></label>
-                                                                    <div class="fax-field-container">
-                                                                        <div class="d-flex fax-field-lable border-bottom">
-                                                                            <div class="d-flex w-100">
-                                                                                <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
-                                                                                    <label for="">Code</label>
-                                                                                </div>
-                                                                                <div class="margin-tbr" style="width: 30%; padding-left: 0.1rem;">
-                                                                                    <label for="">Number</label>
-                                                                                </div>
-                                                                                <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                        
-                                                                                </div>
-                                                                            </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <div>
+                                                                            <label for="">State</label>
                                                                         </div>
-                                                                        <div class="d-flex fax-field-input" style="align-items: center;">
-                                                                        
-                                                                            <div class="margin-tbr" style="width: 15%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 35%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
-                                                                            </div>
-                                                                        
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-
-
-
-                                                                <div class="email-field" style="width: 66%;" class="margin-tbr">
-                                                                    <div style="margin-top: 0.5rem;">
-                                                                        <label class="font-dark" for="" style="font-weight: 700;">Email <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i></label>
-                                                                    </div>
-                                                                    <div class="email-input">
-                                                                        <div class="d-flex single-email d-center">
-                                                                            <div class="w-100">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
-                                                                            </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <div>
+                                                                            <label for="">Country</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">US</option>
+                                                                                <option value="">India</option>
+                                                                                <option value="">Australia</option>
+                                                                                <option value="">US</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
-                                                                    
-                                                                </div>
-                                                                <div class="website-field" style="width: 66%;" class="margin-tbr">
-                                                                    <div style="margin-top: 0.5rem;">
-                                                                        <label class="font-dark" for="" style="font-weight: 700;">Website <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i></label>
+                                                                    <div class="margin-tbr" style="width: 10%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
                                                                     </div>
-                                                                    <div class="website-input">
-                                                                        <div class="d-flex d-center single-website">
-                                                                            <div class="w-100">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div style="margin-left: 0.5rem;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeWebsiteField(this)"></i>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    
                                                                 </div>
                                                             </div>
-                                                        </fieldset>
-                                                    </div>
-                                                    <div class="contact-detail-form">
-                                                        <fieldset>
-                                                            <legend><select name="" id="" class="select-option" style="width: 10rem;">
-                                                                    <option value="" >Home</option>
-                                                                    <option value="" selected>Work</option>
-                                                                    <option value="">Other</option>
-                                                                </select></legend>
-                                                            <div class="contact-container">
-                                                                <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                                                                    <div>
-                                                                        <span class="font-dark" style="font-weight: 700; font-size: 1rem;">Address <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
-                                                                                onclick=" addAddressField(this)"></i></span>
+                                                        </div>
+
+                                                        <div class="phone-form">
+                                                            <span class="font-dark" style="font-weight: 700;">
+                                                                Phone <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i>
+                                                            </span>
+                                                            <div class="phone-field">
+                                                                <div class="d-flex w-100 border-bottom phone-lable">
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Type</label>
                                                                     </div>
-                                                                    <div class="right-align-item">
-                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Code</label>
                                                                     </div>
-                                                                </div>
-                                                                <div class="address-section">
-                                                                    <div id="address-field">
-                                                                        <div class="street-field" style="width: 66%;">
-                                                                            <div>
-                                                                                <label for="">Street</label>
-                                                                            </div>
-                                                                            <div>
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="address-field d-flex">
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <div>
-                                                                                    <label for="">Zip</label>
-                                                                                </div>
-                                                                                <div class="">
-                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <div>
-                                                                                    <label for="">City</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <div>
-                                                                                    <label for="">State</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <select name="" id="" class="select-option">
-                                                                                        <option value="">Washington</option>
-                                                                                        <option value="">Alabama</option>
-                                                                                        <option value="">Alaska</option>
-                                                                                        <option value="">Arizona</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <div>
-                                                                                    <label for="">Country</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <select name="" id="" class="select-option">
-                                                                                        <option value="">US</option>
-                                                                                        <option value="">India</option>
-                                                                                        <option value="">Australia</option>
-                                                                                        <option value="">US</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 10%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
-                                                                            </div>
-                                                                        </div>
+                                                                    <div class="margin-tbr" style="width: 30%; padding-left: 0.2rem;">
+                                                                        <label for="">Number</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Ext.</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
+
                                                                     </div>
                                                                 </div>
-                                                                
-                                                                <div class="phone-form">
-                                                                    <span class="font-dark" style="font-weight: 700;">Phone <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i></span>
-                                                                    <div class="phone-field">
-                                                                        <div class="d-flex w-100 border-bottom phone-lable">
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Type</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Code</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 30%; padding-left: 0.2rem;">
-                                                                                <label for="">Number</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                                <label for="">Ext.</label>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
-                                                                    
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-flex d-center phone-input">
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <select name="" id="" class="select-option">
-                                                                                    <option value="">Cell</option>
-                                                                                    <option value="">Landline</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 20%;">
-                                                                                <select name="" id="" class="select-option">
-                                                                                    <option value="">+1 United States</option>
-                                                                                    <option value="">+1 Puerto Rico</option>
-                                                                                    <option value="">+93 Afghanistan</option>
-                                                                                    <option value="">+355 Albania</option>
-                                                                                    <option value="">+213 Algeria</option>
-                                                                                    <option value="">+1 American Samoa</option>
-                                                                                    <option value="">+376 Andorra</option>
-                                                                                    <option value="">+244 Angola</option>
-                                                                                    <option value="">+1 Anguilla</option>
-                                                                                    <option value="">+672 Antarctica</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 30%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div style="width: 20%;">
-                                                                    
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 15%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
-                                                                            </div>
-                                                                    
-                                                                        </div>
+                                                                <div class="d-flex d-center phone-input">
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <select name="" id="" class="select-option">
+                                                                            <option value="">Cell</option>
+                                                                            <option value="">Landline</option>
+                                                                        </select>
                                                                     </div>
-                                                                </div>
-                                                                <div class="fax-field" style="margin-top: 0.5rem;">
-                                                                    <label class="font-dark" for="" style="font-weight: 700;">Fax <i
-                                                                            class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i></label>
-                                                                    <div class="fax-field-container">
-                                                                        <div class="d-flex fax-field-lable border-bottom">
-                                                                            <div class="d-flex w-100">
-                                                                                <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
-                                                                                    <label for="">Code</label>
-                                                                                </div>
-                                                                                <div class="margin-tbr" style="width: 30%; padding-left: 0.1rem;">
-                                                                                    <label for="">Number</label>
-                                                                                </div>
-                                                                                <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
-                                                                        
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-flex fax-field-input" style="align-items: center;">
-                                                                        
-                                                                            <div class="margin-tbr" style="width: 15%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 35%;">
-                                                                                <input type="text" class="input-tag" id="" name="" placeholder="">
-                                                                            </div>
-                                                                            <div class="margin-tbr" style="width: 25%;">
-                                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
-                                                                            </div>
-                                                                        
-                                                                        </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <select name="" id="" class="select-option">
+                                                                            <option value="">+1 United States</option>
+                                                                            <option value="">+1 Puerto Rico</option>
+                                                                            <option value="">+93 Afghanistan</option>
+                                                                            <option value="">+355 Albania</option>
+                                                                            <option value="">+213 Algeria</option>
+                                                                            <option value="">+1 American Samoa</option>
+                                                                            <option value="">+376 Andorra</option>
+                                                                            <option value="">+244 Angola</option>
+                                                                            <option value="">+1 Anguilla</option>
+                                                                            <option value="">+672 Antarctica</option>
+                                                                        </select>
                                                                     </div>
-                                                                </div>
-                                                                <div class="email-field" style="width: 66%;" class="margin-tbr">
-                                                                    <div style="margin-top: 0.5rem;">
-                                                                        <label class="font-dark" for="" style="font-weight: 700;">Email <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i></label>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
                                                                     </div>
-                                                                    <div class="email-input">
-                                                                        <div class="d-flex single-email d-center">
-                                                                            
-                                                                        </div>
+                                                                    <div style="width: 20%;">
+
                                                                     </div>
-                                                                    
-                                                                </div>
-                                                                <div class="website-field" style="width: 66%;" class="margin-tbr">
-                                                                    <div style="margin-top: 0.5rem;">
-                                                                        <label class="font-dark" for="" style="font-weight: 700;">Website <i
-                                                                                class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i></label>
+                                                                    <div class="margin-tbr" style="width: 15%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
                                                                     </div>
-                                                                    <div class="website-input">
-                                                                        <div class="d-flex d-center single-website">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                    
+
                                                                 </div>
                                                             </div>
-                                                        </fieldset>
+                                                        </div>
+
+
+                                                        <div class="fax-field" style="margin-top: 0.5rem;">
+                                                            <label class="font-dark" for="" style="font-weight: 700;">
+                                                                Fax <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i>
+                                                            </label>
+                                                            <div class="fax-field-container">
+                                                                <div class="d-flex fax-field-lable border-bottom">
+                                                                    <div class="d-flex w-100">
+                                                                        <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
+                                                                            <label for="">Code</label>
+                                                                        </div>
+                                                                        <div class="margin-tbr" style="width: 30%; padding-left: 0.1rem;">
+                                                                            <label for="">Number</label>
+                                                                        </div>
+                                                                        <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex fax-field-input" style="align-items: center;">
+
+                                                                    <div class="margin-tbr" style="width: 15%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 35%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="email-field margin-tbr" style="width: 66%;">
+                                                            <div style="margin-top: 0.5rem;">
+                                                                <label class="font-dark" for="" style="font-weight: 700;">
+                                                                    Email <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="email-input">
+                                                                <div class="d-flex single-email d-center">
+                                                                    <div class="w-100">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div style="margin-left: 0.5rem;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeEmailField(this)"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="website-field margin-tbr" style="width: 66%;">
+                                                            <div style="margin-top: 0.5rem;">
+                                                                <label class="font-dark" for="" style="font-weight: 700;">
+                                                                    Website <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="website-input">
+                                                                <div class="d-flex d-center single-website">
+                                                                    <div class="w-100">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div style="margin-left: 0.5rem;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeWebsiteField(this)"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="contact-detail-form">
+                                                <fieldset>
+                                                    <legend>
+                                                        <select name="" id="" class="select-option" style="width: 10rem;">
+                                                            <option value="">Home</option>
+                                                            <option value="" selected>Work</option>
+                                                            <option value="">Other</option>
+                                                        </select>
+                                                    </legend>
+                                                    <div class="contact-container">
+                                                        <div class="address-header d-flex w-100" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                                            <div>
+                                                                <span class="font-dark" style="font-weight: 700; font-size: 1rem;">
+                                                                    Address <i class="fa-solid fa-circle-plus cursor-pointer btn-scale d-none" id="add-address-btn"
+                                                                               onclick=" addAddressField(this)"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div class="right-align-item">
+                                                                <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeContactForm(this)"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="address-section">
+                                                            <div id="address-field">
+                                                                <div class="street-field" style="width: 66%;">
+                                                                    <div>
+                                                                        <label for="">Street</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="address-field d-flex">
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <div>
+                                                                            <label for="">Zip</label>
+                                                                        </div>
+                                                                        <div class="">
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <div>
+                                                                            <label for="">City</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <div>
+                                                                            <label for="">State</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">Washington</option>
+                                                                                <option value="">Alabama</option>
+                                                                                <option value="">Alaska</option>
+                                                                                <option value="">Arizona</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <div>
+                                                                            <label for="">Country</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <select name="" id="" class="select-option">
+                                                                                <option value="">US</option>
+                                                                                <option value="">India</option>
+                                                                                <option value="">Australia</option>
+                                                                                <option value="">US</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 10%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeAddressField(this)"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="phone-form">
+                                                            <span class="font-dark" style="font-weight: 700;">
+                                                                Phone <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addPhoneField(this)"></i>
+                                                            </span>
+                                                            <div class="phone-field">
+                                                                <div class="d-flex w-100 border-bottom phone-lable">
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Type</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Code</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%; padding-left: 0.2rem;">
+                                                                        <label for="">Number</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+                                                                        <label for="">Ext.</label>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex d-center phone-input">
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <select name="" id="" class="select-option">
+                                                                            <option value="">Cell</option>
+                                                                            <option value="">Landline</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 20%;">
+                                                                        <select name="" id="" class="select-option">
+                                                                            <option value="">+1 United States</option>
+                                                                            <option value="">+1 Puerto Rico</option>
+                                                                            <option value="">+93 Afghanistan</option>
+                                                                            <option value="">+355 Albania</option>
+                                                                            <option value="">+213 Algeria</option>
+                                                                            <option value="">+1 American Samoa</option>
+                                                                            <option value="">+376 Andorra</option>
+                                                                            <option value="">+244 Angola</option>
+                                                                            <option value="">+1 Anguilla</option>
+                                                                            <option value="">+672 Antarctica</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 30%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div style="width: 20%;">
+
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 15%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removePhoneField(this)"></i>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fax-field" style="margin-top: 0.5rem;">
+                                                            <label class="font-dark" for="" style="font-weight: 700;">
+                                                                Fax <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addFaxField(this)"></i>
+                                                            </label>
+                                                            <div class="fax-field-container">
+                                                                <div class="d-flex fax-field-lable border-bottom">
+                                                                    <div class="d-flex w-100">
+                                                                        <div class="margin-tbr" style="width: 15%; padding-left: 0.1rem;">
+                                                                            <label for="">Code</label>
+                                                                        </div>
+                                                                        <div class="margin-tbr" style="width: 30%; padding-left: 0.1rem;">
+                                                                            <label for="">Number</label>
+                                                                        </div>
+                                                                        <div class="margin-tbr" style="width: 20%; padding-left: 0.1rem;">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex fax-field-input" style="align-items: center;">
+
+                                                                    <div class="margin-tbr" style="width: 15%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 35%;">
+                                                                        <input type="text" class="input-tag" id="" name="" placeholder="">
+                                                                    </div>
+                                                                    <div class="margin-tbr" style="width: 25%;">
+                                                                        <i class="fa-solid fa-trash-can cursor-pointer btn-scale" onclick="removeFaxField(this)"></i>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="email-field margin-tbr" style="width: 66%;">
+                                                            <div style="margin-top: 0.5rem;">
+                                                                <label class="font-dark" for="" style="font-weight: 700;">
+                                                                    Email <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addEmailField(this)"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="email-input">
+                                                                <div class="d-flex single-email d-center">
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="website-field margin-tbr" style="width: 66%;">
+                                                            <div style="margin-top: 0.5rem;">
+                                                                <label class="font-dark" for="" style="font-weight: 700;">
+                                                                    Website <i class="fa-solid fa-circle-plus cursor-pointer btn-scale" onclick="addWebsiteField(this)"></i>
+                                                                </label>
+                                                            </div>
+                                                            <div class="website-input">
+                                                                <div class="d-flex d-center single-website">
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="patient-contact-preference-info">
@@ -982,7 +997,6 @@
                                                     <td><input type="text" class="table-input-tag" id="" name="" value="9712229147"></td>
                                                     <td><input type="text" class="table-input-tag" id="" name="" value="ashishj@meditab.com"></td>
                                                     <td><input type="text" class="table-input-tag" id="" name="" value=""></td>
-</td>
                                                 </tr>
                                                 <tr>
                                                     <td><input type="text" class="table-input-tag" id="" name="" value="Primary" disabled style="background-color: #e8ebed;"></td>
@@ -1035,263 +1049,263 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="patient-other-info-main mb-bottom-2" id="patient-other-info-form">
-                                                <div class="other-info-header">
-                                                    <h2 ><i class="fa-solid fa-circle-chevron-right cursor-pointer btn-scale" id="other-info-btn" onclick="openOtherInfoForm()"></i> Other Details</h2>
+                                        <div class="other-info-header">
+                                            <h2><i class="fa-solid fa-circle-chevron-right cursor-pointer btn-scale" id="other-info-btn" onclick="openOtherInfoForm()"></i> Other Details</h2>
+                                        </div>
+                                        <div class="d-flex d-flex-lg-col d-flex-md-col d-flex-sm-col">
+                                            <div class="xl-side-33">
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Employment:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="employment" id="employment" class="select-option">
+                                                                <option value="">Full time employed</option>
+                                                                <option value="">Part time employed</option>
+                                                                <option value="">Unemployed</option>
+                                                                <option value="">Self-employed</option>
+                                                                <option value="">Retired</option>
+                                                                <option value="">On active military duty</option>
+                                                                <option value="">Unknown</option>
+                                                                <option value="">Contract, per diem</option>
+                                                                <option value="">Leave of absence</option>
+                                                                <option value="">Other</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex d-flex-lg-col d-flex-md-col d-flex-sm-col">
-                                                    <div class="xl-side-33">
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Employment:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="employment" id="employment" class="select-option">
-                                                                        <option value="">Full time employed</option>
-                                                                        <option value="">Part time employed</option>
-                                                                        <option value="">Unemployed</option>
-                                                                        <option value="">Self-employed</option>
-                                                                        <option value="">Retired</option>
-                                                                        <option value="">On active military duty</option>
-                                                                        <option value="">Unknown</option>
-                                                                        <option value="">Contract, per diem</option>
-                                                                        <option value="">Leave of absence</option>
-                                                                        <option value="">Other</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">First Called Date:</label>
                                                         </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">First Called Date:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="date" class="input-tag" id="first-time-called-date" name="first-time-called-date" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Deceased Time:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="date" class="input-tag" id="deceased-time" name="deceased-time" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Mother's Last Name:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="mother-lname" name="mother-lastname" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Birth Place:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="birthplace" name="birthplace" placeholder="" >
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="d-flex d-center w-100">
-                                                            <div class="right-align-item w-50">
-                                                                <label for="">Citizenship:</label>
-                                                            </div>
-                                                            <div class="left-align-item w-50">
-                                                                <select name="citizenship" id="citizenship" class="select-option">
-                                                                    <option value="">American</option>
-                                                                    <option value="">Indian</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex w-100">
-                                                                <div class="right-align-item w-50" style="margin-top: 0.3rem;">
-                                                                    <label for="" >Note:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <textarea class="input-tag" id="note" name="note" placeholder=""></textarea>
-                                                                </div>
-                                                            </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="date" class="input-tag" id="first-time-called-date" name="first-time-called-date" placeholder="">
                                                         </div>
                                                     </div>
-                                                    <div class="xl-side-33">
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Gender Identity:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="gender-identifier" id="gender-identifier" class="select-option">
-                                                                        <option value="">Male</option>
-                                                                        <option value="">Female</option>
-                                                                        <option value="">Choose not to disclose</option>
-                                                                        <option value="">Female-to-Male (FTM)/Transgender Male/Trans Man</option>
-                                                                        <option value="">Genderqueer, neither exclusively male nor female</option>
-                                                                        <option value="">Male-to-Female (MTF)/Transgender Female/Trans Woman</option>
-                                                                        <option value="">Unknown</option>
-                                                                        <option value="">Other</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Referral Source:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="referral-spurce" id="referral-spurce" class="select-option">
-                                                                        <option value="">Kaiser hospital</option>
-                                                                    
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Mother's Maiden:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="mother-maiden" name="mother-maiden" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Mother's Identifier:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="mother-identifier" name="mother-identifier" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Multiple Birth:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="multibirth" name="multibirth" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="d-flex d-center w-100">
-                                                            <div class="right-align-item w-50">
-                                                                <label for="">Religion:</label>
-                                                            </div>
-                                                            <div class="left-align-item w-50">
-                                                                <select name="religion" id="religion" class="select-option">
-                                                                    <option value="">Christian: American Baptist Church</option>
-                                                                    <option value="">Agnostic</option>
-                                                                    <option value="">Hindu</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="xl-side-33">
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Sexual Orientation:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="sexual-orientation" id="sexual-orientation" class="select-option">
-                                                                        <option value="">Christian: American Baptist Church</option>
-                                                                        <option value="">Agnostic</option>
-                                                                        <option value="">Hindu</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Deceased:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="deceased" name="deceased" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Mother's Middle Name:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="mothermname" name="mothermiddlename" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Veteran Military Status:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="religion" id="religion" class="select-option">
-                                                                        <option value="">No records found. Click on + to add new.</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Nationality:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <select name="religion" id="religion" class="select-option">
-                                                                        <option value="">American</option>
-                                                                        <option value="">Indian</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div>
-                                                            <div class="d-flex d-center w-100">
-                                                                <div class="right-align-item w-50">
-                                                                    <label for="">Driver's License:</label>
-                                                                </div>
-                                                                <div class="left-align-item w-50">
-                                                                    <input type="text" class="input-tag" id="driver-license" name="driver-license" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                            
                                                 </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Deceased Time:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="date" class="input-tag" id="deceased-time" name="deceased-time" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Mother's Last Name:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="mother-lname" name="mother-lastname" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Birth Place:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="birthplace" name="birthplace" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="">Citizenship:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="citizenship" id="citizenship" class="select-option">
+                                                            <option value="">American</option>
+                                                            <option value="">Indian</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex w-100">
+                                                        <div class="right-align-item w-50" style="margin-top: 0.3rem;">
+                                                            <label for="">Note:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <textarea class="input-tag" id="note" name="note" placeholder=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="xl-side-33">
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Gender Identity:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="gender-identifier" id="gender-identifier" class="select-option">
+                                                                <option value="">Male</option>
+                                                                <option value="">Female</option>
+                                                                <option value="">Choose not to disclose</option>
+                                                                <option value="">Female-to-Male (FTM)/Transgender Male/Trans Man</option>
+                                                                <option value="">Genderqueer, neither exclusively male nor female</option>
+                                                                <option value="">Male-to-Female (MTF)/Transgender Female/Trans Woman</option>
+                                                                <option value="">Unknown</option>
+                                                                <option value="">Other</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Referral Source:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="referral-spurce" id="referral-spurce" class="select-option">
+                                                                <option value="">Kaiser hospital</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Mother's Maiden:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="mother-maiden" name="mother-maiden" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Mother's Identifier:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="mother-identifier" name="mother-identifier" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Multiple Birth:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="multibirth" name="multibirth" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex d-center w-100">
+                                                    <div class="right-align-item w-50">
+                                                        <label for="">Religion:</label>
+                                                    </div>
+                                                    <div class="left-align-item w-50">
+                                                        <select name="religion" id="religion" class="select-option">
+                                                            <option value="">Christian: American Baptist Church</option>
+                                                            <option value="">Agnostic</option>
+                                                            <option value="">Hindu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="xl-side-33">
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Sexual Orientation:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="sexual-orientation" id="sexual-orientation" class="select-option">
+                                                                <option value="">Christian: American Baptist Church</option>
+                                                                <option value="">Agnostic</option>
+                                                                <option value="">Hindu</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Deceased:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="deceased" name="deceased" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Mother's Middle Name:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="mothermname" name="mothermiddlename" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Veteran Military Status:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="religion" id="religion" class="select-option">
+                                                                <option value="">No records found. Click on + to add new.</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Nationality:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <select name="religion" id="religion" class="select-option">
+                                                                <option value="">American</option>
+                                                                <option value="">Indian</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="d-flex d-center w-100">
+                                                        <div class="right-align-item w-50">
+                                                            <label for="">Driver's License:</label>
+                                                        </div>
+                                                        <div class="left-align-item w-50">
+                                                            <input type="text" class="input-tag" id="driver-license" name="driver-license" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
                                     </div>
 
                                 </form>
@@ -1302,7 +1316,7 @@
             </div>
         </div>
     </main>
-</body>
     <script src="./assets/js/main.js"></script>
+</body>
     <!-- <script src="./assets/js/media.js"></script> -->
 </html>

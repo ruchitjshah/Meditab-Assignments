@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <Folder Include="HTMLFiles\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\patientimages\" />
   </ItemGroup>
 
 </Project>

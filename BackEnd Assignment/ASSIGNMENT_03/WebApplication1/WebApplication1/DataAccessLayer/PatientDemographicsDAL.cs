@@ -71,7 +71,7 @@ namespace WebApplication1.DataAccessLayer
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
-                                    dob = dr["dob"] == DBNull.Value ? null : DateTime.Parse(dr["dob"].ToString()),
+                                    dob = dr["dob"] == DBNull.Value ? null : Convert.ToDateTime(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
                          });
 
@@ -136,7 +136,7 @@ namespace WebApplication1.DataAccessLayer
                                     firstname = dr["firstname"].ToString(),
                                     lastname = dr["lastname"].ToString(),
                                     middlename = dr["middlename"].ToString(),
-                                    dob = dr["dob"] == DBNull.Value ? null : DateTime.Parse(dr["dob"].ToString()),
+                                    dob = dr["dob"] == DBNull.Value ? null :Convert.ToDateTime(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
                                 }
                                 );
@@ -297,5 +297,20 @@ namespace WebApplication1.DataAccessLayer
                 }
             }    
         }
+
+        /*public Task<int> UploadImage(IFormFile files)
+        {
+            int id = 0;
+            if (files != null)
+            {
+                Console.WriteLine(files.FileName);
+            }
+            else
+            {
+                Console.WriteLine("Hello");
+            }
+
+            return Task.FromResult(id);
+        }*/
     }
 }

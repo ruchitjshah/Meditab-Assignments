@@ -40,4 +40,10 @@
 
         public string? sortmethod { get; set; } = null;
     }
+
+    public class PatientDemographicsModelImageUpload
+    {
+        public int? patient_id { get; set; }
+        public IFormFile? image { get; set; }
+    }
 }
