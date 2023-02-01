@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R4ES5/9pQmu5yuIOGkEqkKoqOBR3BKaLFqveXGZUrNg=",
+  "Hash": "tS9J4UC1uoKmelvnqfByLuYpo1L5e36kFOb1h8J4zUY=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\patientimages\\PatientProfile1.jpg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "patientimages/PatientProfile1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\patientimages\\PatientProfile1.jpg"
     },
     {
       "Identity": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\Screenshot\\Assignment-02_SS1.png",
