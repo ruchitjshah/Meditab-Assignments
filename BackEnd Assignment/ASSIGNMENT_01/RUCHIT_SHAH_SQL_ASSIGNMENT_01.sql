@@ -79,6 +79,10 @@ insert into patient_demographics(firstname,lastname,gender_id,dob) values ('Niki
 select * from patient_demographics;
 
 
+--ALTER TABLE patient_demographics   
+--ADD COLUMN patient_image VARCHAR default ;  
+
+
 create table address(
 	address_id serial primary key,
 	patient_id int references patient_demographics(patient_id),

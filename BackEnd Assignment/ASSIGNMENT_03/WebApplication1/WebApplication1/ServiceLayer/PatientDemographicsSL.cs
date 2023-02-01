@@ -45,13 +45,24 @@ namespace WebApplication1.ServiceLayer
             {
                 if (files.image != null)
                 {
-                    string filename = "PatientProfile" + files.patient_id.ToString() + Path.GetExtension(files.image.FileName);
-                    string filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\patientimages", filename);
+                    string filename = "PatientProfile" + files.patient_id.ToString() + ".jpg";
+                    string filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\patientimages", filename);
                     var stream = new FileStream(filepath, FileMode.Create);
                     await files.image.CopyToAsync(stream);
                     Console.WriteLine(filename);
                     Console.WriteLine(files.patient_id.ToString());
                     stream.Close();
+
+                    if(File.Exists("wwwroot\\assets\\patientimages\\PatientProfile" + files.patient_id.ToString() + ".jpg"))
+                    {
+                        Console.WriteLine("File present");
+                    }
+                    else
+                    {
+                        Console.WriteLine("File not present");
+
+                    }
+                    /*return await _patientDemographicsDAL.UploadImage(filename, int.Parse(files.patient_id.ToString()));*/
                 }
                 else
                 {

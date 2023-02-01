@@ -18,6 +18,8 @@
         public DateTime? dob { get; set; } = null;
 
         public int? gender_id { get; set; } = null;
+
+        public string? patient_image { get;set; } = null;
     }
 
     public class PatientDemographicsModelRequest

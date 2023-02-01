@@ -41,6 +41,8 @@ namespace WebApplication1.DataAccessLayer
                 PatientDemographics = new List<PatientDemographicsModelResponse>()
             };
 
+            string imagepath = "assets\\patientimages\\default.png";
+
             try
             {
                 string query = @"
@@ -56,12 +58,14 @@ namespace WebApplication1.DataAccessLayer
                     using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                     {
                         myCommand.Parameters.AddWithValue("Id", id);
-                       
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
 
                         if(table.Rows.Count == 0) {
                             return await Task.FromResult(-1);
+                        }
+                        if(File.Exists("wwwroot\\assets\\patientimages\\PatientProfile" + id.ToString() + ".jpg")){
+                            imagepath = "assets\\patientimages\\PatientProfile" + id.ToString() + ".jpg";
                         }
                         DataRow dr = table.Rows[0];
                         PatientData.PatientDemographics.Add(
@@ -73,7 +77,8 @@ namespace WebApplication1.DataAccessLayer
                                     middlename = dr["middlename"].ToString(),
                                     dob = dr["dob"] == DBNull.Value ? null : Convert.ToDateTime(dr["dob"].ToString()),
                                     gender_id = (int)dr["gender_id"],
-                         });
+                                    patient_image = imagepath
+                        });
 
                         myReader.Close();
                         myCon.Close();
@@ -298,19 +303,38 @@ namespace WebApplication1.DataAccessLayer
             }    
         }
 
-        /*public Task<int> UploadImage(IFormFile files)
+        /*public Task<int> UploadImage(string filename, int id)
         {
-            int id = 0;
-            if (files != null)
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                Console.WriteLine(files.FileName);
-            }
-            else
-            {
-                Console.WriteLine("Hello");
-            }
+                try
+                {
+                    string query = @"update patient_demographics set patient_image = @FileName where  patient_id = @Id";
 
-            return Task.FromResult(id);
+                    DataTable table = new DataTable();
+                    string sqlDataSource = _configuration.GetConnectionString("DBConnectionStr");
+                    NpgsqlDataReader myReader;
+                    using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                    {
+                        myCon.Open();
+                        using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                        {
+                            myCommand.Parameters.AddWithValue("Id", id);
+                            myCommand.Parameters.AddWithValue("FileName", id);
+                            myReader = myCommand.ExecuteReader();
+                            myReader.Close();
+                            transactionScope.Complete();
+                            myCon.Close();
+                        }
+                    }
+                    return Task.FromResult("Daleted Successfully");
+                }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                    return Task.FromResult(ex.Message);
+                }
+            }
         }*/
     }
 }

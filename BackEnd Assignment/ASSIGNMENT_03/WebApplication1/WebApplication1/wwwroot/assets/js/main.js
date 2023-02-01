@@ -15,7 +15,7 @@ userDOB.addEventListener('change',getAge);
 function uploadImage(){
     var file = document.getElementById("patient-image");
     var formdata = new FormData();
-    formdata.append("patient_id", 1);
+    formdata.append("patient_id", id);
     formdata.append("image", file.files[0]);
     
     fetch('http://localhost:5213/api/PatientDemographics/uploadimage', {
@@ -50,6 +50,7 @@ function getDataById(){
                     document.getElementById("dob").value = data.PatientDemographics[0].dob.split("T")[0];
                     getAge();
                 }
+                document.getElementById('patient-image-tag').src = data.PatientDemographics[0].patient_image;
             }
             else{
                 alert("Patient doesn't found!");

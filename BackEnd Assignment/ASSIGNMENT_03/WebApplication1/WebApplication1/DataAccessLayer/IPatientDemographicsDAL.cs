@@ -14,6 +14,6 @@ namespace WebApplication1.DataAccessLayer
 
         public Task<string> DeleteUser(int id);
 
-        /*public Task<int> UploadImage(IFormFile files);*/
+        /*public Task<int> UploadImage(string filename, int id);*/
     }
 }
