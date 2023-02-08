@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\assets\\patientimages\\PatientProfile1.jpg"
     },
     {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\patientimages\\PatientProfile2.jpg",
+      "PackagePath": "staticwebassets\\assets\\patientimages\\PatientProfile2.jpg"
+    },
+    {
+      "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\patientimages\\PatientProfile3.jpg",
+      "PackagePath": "staticwebassets\\assets\\patientimages\\PatientProfile3.jpg"
+    },
+    {
       "Id": "C:\\Assignments\\meditab-assignments-master\\meditab-assignments-master\\BackEnd Assignment\\ASSIGNMENT_03\\WebApplication1\\WebApplication1\\wwwroot\\assets\\patientimages\\default.png",
       "PackagePath": "staticwebassets\\assets\\patientimages\\default.png"
     },
